@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		89CD634E197712AC00896E3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CD634D197712AC00896E3A /* Foundation.framework */; };
+		89CD6350197712AC00896E3A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CD634F197712AC00896E3A /* CoreGraphics.framework */; };
+		89CD6352197712AC00896E3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CD6351197712AC00896E3A /* UIKit.framework */; };
+		89CD6358197712AC00896E3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89CD6356197712AC00896E3A /* InfoPlist.strings */; };
+		89CD635A197712AC00896E3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD6359197712AC00896E3A /* main.m */; };
+		89CD635E197712AC00896E3A /* CSMobileAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD635D197712AC00896E3A /* CSMobileAppDelegate.m */; };
+		89CD6361197712AC00896E3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CD635F197712AC00896E3A /* Main.storyboard */; };
+		89CD6364197712AC00896E3A /* CSMobileMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD6363197712AC00896E3A /* CSMobileMasterViewController.m */; };
+		89CD6367197712AC00896E3A /* CSMobileDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD6366197712AC00896E3A /* CSMobileDetailViewController.m */; };
+		89CD6369197712AC00896E3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CD6368197712AC00896E3A /* Images.xcassets */; };
+		89CD6370197712AC00896E3A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CD636F197712AC00896E3A /* XCTest.framework */; };
+		89CD6371197712AC00896E3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CD634D197712AC00896E3A /* Foundation.framework */; };
+		89CD6372197712AC00896E3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CD6351197712AC00896E3A /* UIKit.framework */; };
+		89CD637A197712AC00896E3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89CD6378197712AC00896E3A /* InfoPlist.strings */; };
+		89CD637C197712AC00896E3A /* CSMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD637B197712AC00896E3A /* CSMobileTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89CD6373197712AC00896E3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89CD6342197712AC00896E3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89CD6349197712AC00896E3A;
+			remoteInfo = CSMobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		89CD634A197712AC00896E3A /* CSMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89CD634D197712AC00896E3A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		89CD634F197712AC00896E3A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		89CD6351197712AC00896E3A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		89CD6355197712AC00896E3A /* CSMobile-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CSMobile-Info.plist"; sourceTree = "<group>"; };
+		89CD6357197712AC00896E3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		89CD6359197712AC00896E3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		89CD635B197712AC00896E3A /* CSMobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CSMobile-Prefix.pch"; sourceTree = "<group>"; };
+		89CD635C197712AC00896E3A /* CSMobileAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMobileAppDelegate.h; sourceTree = "<group>"; };
+		89CD635D197712AC00896E3A /* CSMobileAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMobileAppDelegate.m; sourceTree = "<group>"; };
+		89CD6360197712AC00896E3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		89CD6362197712AC00896E3A /* CSMobileMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMobileMasterViewController.h; sourceTree = "<group>"; };
+		89CD6363197712AC00896E3A /* CSMobileMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMobileMasterViewController.m; sourceTree = "<group>"; };
+		89CD6365197712AC00896E3A /* CSMobileDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMobileDetailViewController.h; sourceTree = "<group>"; };
+		89CD6366197712AC00896E3A /* CSMobileDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMobileDetailViewController.m; sourceTree = "<group>"; };
+		89CD6368197712AC00896E3A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		89CD636E197712AC00896E3A /* CSMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89CD636F197712AC00896E3A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		89CD6377197712AC00896E3A /* CSMobileTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CSMobileTests-Info.plist"; sourceTree = "<group>"; };
+		89CD6379197712AC00896E3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		89CD637B197712AC00896E3A /* CSMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMobileTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		89CD6347197712AC00896E3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CD6350197712AC00896E3A /* CoreGraphics.framework in Frameworks */,
+				89CD6352197712AC00896E3A /* UIKit.framework in Frameworks */,
+				89CD634E197712AC00896E3A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CD636B197712AC00896E3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CD6370197712AC00896E3A /* XCTest.framework in Frameworks */,
+				89CD6372197712AC00896E3A /* UIKit.framework in Frameworks */,
+				89CD6371197712AC00896E3A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		89CD6341197712AC00896E3A = {
+			isa = PBXGroup;
+			children = (
+				89CD6353197712AC00896E3A /* CSMobile */,
+				89CD6375197712AC00896E3A /* CSMobileTests */,
+				89CD634C197712AC00896E3A /* Frameworks */,
+				89CD634B197712AC00896E3A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		89CD634B197712AC00896E3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89CD634A197712AC00896E3A /* CSMobile.app */,
+				89CD636E197712AC00896E3A /* CSMobileTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		89CD634C197712AC00896E3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89CD634D197712AC00896E3A /* Foundation.framework */,
+				89CD634F197712AC00896E3A /* CoreGraphics.framework */,
+				89CD6351197712AC00896E3A /* UIKit.framework */,
+				89CD636F197712AC00896E3A /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		89CD6353197712AC00896E3A /* CSMobile */ = {
+			isa = PBXGroup;
+			children = (
+				89CD635C197712AC00896E3A /* CSMobileAppDelegate.h */,
+				89CD635D197712AC00896E3A /* CSMobileAppDelegate.m */,
+				89CD635F197712AC00896E3A /* Main.storyboard */,
+				89CD6362197712AC00896E3A /* CSMobileMasterViewController.h */,
+				89CD6363197712AC00896E3A /* CSMobileMasterViewController.m */,
+				89CD6365197712AC00896E3A /* CSMobileDetailViewController.h */,
+				89CD6366197712AC00896E3A /* CSMobileDetailViewController.m */,
+				89CD6368197712AC00896E3A /* Images.xcassets */,
+				89CD6354197712AC00896E3A /* Supporting Files */,
+			);
+			path = CSMobile;
+			sourceTree = "<group>";
+		};
+		89CD6354197712AC00896E3A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89CD6355197712AC00896E3A /* CSMobile-Info.plist */,
+				89CD6356197712AC00896E3A /* InfoPlist.strings */,
+				89CD6359197712AC00896E3A /* main.m */,
+				89CD635B197712AC00896E3A /* CSMobile-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89CD6375197712AC00896E3A /* CSMobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				89CD637B197712AC00896E3A /* CSMobileTests.m */,
+				89CD6376197712AC00896E3A /* Supporting Files */,
+			);
+			path = CSMobileTests;
+			sourceTree = "<group>";
+		};
+		89CD6376197712AC00896E3A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89CD6377197712AC00896E3A /* CSMobileTests-Info.plist */,
+				89CD6378197712AC00896E3A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		89CD6349197712AC00896E3A /* CSMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89CD637F197712AC00896E3A /* Build configuration list for PBXNativeTarget "CSMobile" */;
+			buildPhases = (
+				89CD6346197712AC00896E3A /* Sources */,
+				89CD6347197712AC00896E3A /* Frameworks */,
+				89CD6348197712AC00896E3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CSMobile;
+			productName = CSMobile;
+			productReference = 89CD634A197712AC00896E3A /* CSMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		89CD636D197712AC00896E3A /* CSMobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89CD6382197712AC00896E3A /* Build configuration list for PBXNativeTarget "CSMobileTests" */;
+			buildPhases = (
+				89CD636A197712AC00896E3A /* Sources */,
+				89CD636B197712AC00896E3A /* Frameworks */,
+				89CD636C197712AC00896E3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89CD6374197712AC00896E3A /* PBXTargetDependency */,
+			);
+			name = CSMobileTests;
+			productName = CSMobileTests;
+			productReference = 89CD636E197712AC00896E3A /* CSMobileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		89CD6342197712AC00896E3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CSMobile;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Daniel Stoll";
+				TargetAttributes = {
+					89CD636D197712AC00896E3A = {
+						TestTargetID = 89CD6349197712AC00896E3A;
+					};
+				};
+			};
+			buildConfigurationList = 89CD6345197712AC00896E3A /* Build configuration list for PBXProject "CSMobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 89CD6341197712AC00896E3A;
+			productRefGroup = 89CD634B197712AC00896E3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				89CD6349197712AC00896E3A /* CSMobile */,
+				89CD636D197712AC00896E3A /* CSMobileTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		89CD6348197712AC00896E3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CD6369197712AC00896E3A /* Images.xcassets in Resources */,
+				89CD6358197712AC00896E3A /* InfoPlist.strings in Resources */,
+				89CD6361197712AC00896E3A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CD636C197712AC00896E3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CD637A197712AC00896E3A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		89CD6346197712AC00896E3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CD6364197712AC00896E3A /* CSMobileMasterViewController.m in Sources */,
+				89CD6367197712AC00896E3A /* CSMobileDetailViewController.m in Sources */,
+				89CD635E197712AC00896E3A /* CSMobileAppDelegate.m in Sources */,
+				89CD635A197712AC00896E3A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CD636A197712AC00896E3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CD637C197712AC00896E3A /* CSMobileTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		89CD6374197712AC00896E3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89CD6349197712AC00896E3A /* CSMobile */;
+			targetProxy = 89CD6373197712AC00896E3A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		89CD6356197712AC00896E3A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89CD6357197712AC00896E3A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		89CD635F197712AC00896E3A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89CD6360197712AC00896E3A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		89CD6378197712AC00896E3A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89CD6379197712AC00896E3A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		89CD637D197712AC00896E3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		89CD637E197712AC00896E3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		89CD6380197712AC00896E3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CSMobile/CSMobile-Prefix.pch";
+				INFOPLIST_FILE = "CSMobile/CSMobile-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		89CD6381197712AC00896E3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CSMobile/CSMobile-Prefix.pch";
+				INFOPLIST_FILE = "CSMobile/CSMobile-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		89CD6383197712AC00896E3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CSMobile.app/CSMobile";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CSMobile/CSMobile-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CSMobileTests/CSMobileTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		89CD6384197712AC00896E3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CSMobile.app/CSMobile";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CSMobile/CSMobile-Prefix.pch";
+				INFOPLIST_FILE = "CSMobileTests/CSMobileTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		89CD6345197712AC00896E3A /* Build configuration list for PBXProject "CSMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89CD637D197712AC00896E3A /* Debug */,
+				89CD637E197712AC00896E3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89CD637F197712AC00896E3A /* Build configuration list for PBXNativeTarget "CSMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89CD6380197712AC00896E3A /* Debug */,
+				89CD6381197712AC00896E3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		89CD6382197712AC00896E3A /* Build configuration list for PBXNativeTarget "CSMobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89CD6383197712AC00896E3A /* Debug */,
+				89CD6384197712AC00896E3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 89CD6342197712AC00896E3A /* Project object */;
+}

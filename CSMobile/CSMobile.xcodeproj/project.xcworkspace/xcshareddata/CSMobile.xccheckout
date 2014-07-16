@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>51D4488A-4A82-47F5-92CD-96F486AA1254</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CSMobile</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>094F619F-2E96-4A17-B96F-1C57DC7426F9</key>
+		<string>https://github.com/dstoll7/CSMobile.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CSMobile/CSMobile.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>094F619F-2E96-4A17-B96F-1C57DC7426F9</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dstoll7/CSMobile.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>094F619F-2E96-4A17-B96F-1C57DC7426F9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>094F619F-2E96-4A17-B96F-1C57DC7426F9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CSMobile</string>
+		</dict>
+	</array>
+</dict>
+</plist>

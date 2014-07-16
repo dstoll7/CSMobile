@@ -22,6 +22,7 @@
 		89CD6372197712AC00896E3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CD6351197712AC00896E3A /* UIKit.framework */; };
 		89CD637A197712AC00896E3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89CD6378197712AC00896E3A /* InfoPlist.strings */; };
 		89CD637C197712AC00896E3A /* CSMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD637B197712AC00896E3A /* CSMobileTests.m */; };
+		89CD6387197716AD00896E3A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD6386197716AD00896E3A /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		89CD6377197712AC00896E3A /* CSMobileTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CSMobileTests-Info.plist"; sourceTree = "<group>"; };
 		89CD6379197712AC00896E3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		89CD637B197712AC00896E3A /* CSMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMobileTests.m; sourceTree = "<group>"; };
+		89CD6385197716AD00896E3A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		89CD6386197716AD00896E3A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				89CD635C197712AC00896E3A /* CSMobileAppDelegate.h */,
 				89CD635D197712AC00896E3A /* CSMobileAppDelegate.m */,
 				89CD635F197712AC00896E3A /* Main.storyboard */,
+				89CD6385197716AD00896E3A /* LoginViewController.h */,
+				89CD6386197716AD00896E3A /* LoginViewController.m */,
 				89CD6362197712AC00896E3A /* CSMobileMasterViewController.h */,
 				89CD6363197712AC00896E3A /* CSMobileMasterViewController.m */,
 				89CD6365197712AC00896E3A /* CSMobileDetailViewController.h */,
@@ -205,6 +210,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Daniel Stoll";
 				TargetAttributes = {
+					89CD6349197712AC00896E3A = {
+						DevelopmentTeam = KPGS6JMLC6;
+					};
 					89CD636D197712AC00896E3A = {
 						TestTargetID = 89CD6349197712AC00896E3A;
 					};
@@ -259,6 +267,7 @@
 				89CD6367197712AC00896E3A /* CSMobileDetailViewController.m in Sources */,
 				89CD635E197712AC00896E3A /* CSMobileAppDelegate.m in Sources */,
 				89CD635A197712AC00896E3A /* main.m in Sources */,
+				89CD6387197716AD00896E3A /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,10 +392,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CSMobile/CSMobile-Prefix.pch";
 				INFOPLIST_FILE = "CSMobile/CSMobile-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -396,10 +408,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CSMobile/CSMobile-Prefix.pch";
 				INFOPLIST_FILE = "CSMobile/CSMobile-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

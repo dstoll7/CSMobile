@@ -16,13 +16,19 @@
 		89CD6361197712AC00896E3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CD635F197712AC00896E3A /* Main.storyboard */; };
 		89CD6364197712AC00896E3A /* CSMobileMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD6363197712AC00896E3A /* CSMobileMasterViewController.m */; };
 		89CD6367197712AC00896E3A /* CSMobileDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD6366197712AC00896E3A /* CSMobileDetailViewController.m */; };
-		89CD6369197712AC00896E3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CD6368197712AC00896E3A /* Images.xcassets */; };
 		89CD6370197712AC00896E3A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CD636F197712AC00896E3A /* XCTest.framework */; };
 		89CD6371197712AC00896E3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CD634D197712AC00896E3A /* Foundation.framework */; };
 		89CD6372197712AC00896E3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CD6351197712AC00896E3A /* UIKit.framework */; };
 		89CD637A197712AC00896E3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89CD6378197712AC00896E3A /* InfoPlist.strings */; };
 		89CD637C197712AC00896E3A /* CSMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD637B197712AC00896E3A /* CSMobileTests.m */; };
 		89CD6387197716AD00896E3A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD6386197716AD00896E3A /* LoginViewController.m */; };
+		89CD638A19784FD400896E3A /* LoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD638919784FD400896E3A /* LoadViewController.m */; };
+		89CD638D1978534100896E3A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD638C1978534100896E3A /* ProfileViewController.m */; };
+		89CD63901978581E00896E3A /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD638F1978581E00896E3A /* ForgotPasswordViewController.m */; };
+		89CD639319785A7F00896E3A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD639219785A7F00896E3A /* SettingsViewController.m */; };
+		89CD639619785A9E00896E3A /* TradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD639519785A9E00896E3A /* TradeViewController.m */; };
+		89CD639919785B2900896E3A /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD639819785B2900896E3A /* SignUpViewController.m */; };
+		89CD639E19787B7E00896E3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CD639D19787B7E00896E3A /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +57,6 @@
 		89CD6363197712AC00896E3A /* CSMobileMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMobileMasterViewController.m; sourceTree = "<group>"; };
 		89CD6365197712AC00896E3A /* CSMobileDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMobileDetailViewController.h; sourceTree = "<group>"; };
 		89CD6366197712AC00896E3A /* CSMobileDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMobileDetailViewController.m; sourceTree = "<group>"; };
-		89CD6368197712AC00896E3A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		89CD636E197712AC00896E3A /* CSMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CD636F197712AC00896E3A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		89CD6377197712AC00896E3A /* CSMobileTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CSMobileTests-Info.plist"; sourceTree = "<group>"; };
@@ -59,6 +64,19 @@
 		89CD637B197712AC00896E3A /* CSMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMobileTests.m; sourceTree = "<group>"; };
 		89CD6385197716AD00896E3A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		89CD6386197716AD00896E3A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		89CD638819784FD400896E3A /* LoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadViewController.h; sourceTree = "<group>"; };
+		89CD638919784FD400896E3A /* LoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadViewController.m; sourceTree = "<group>"; };
+		89CD638B1978534100896E3A /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		89CD638C1978534100896E3A /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		89CD638E1978581E00896E3A /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
+		89CD638F1978581E00896E3A /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
+		89CD639119785A7F00896E3A /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		89CD639219785A7F00896E3A /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		89CD639419785A9E00896E3A /* TradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TradeViewController.h; sourceTree = "<group>"; };
+		89CD639519785A9E00896E3A /* TradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TradeViewController.m; sourceTree = "<group>"; };
+		89CD639719785B2900896E3A /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		89CD639819785B2900896E3A /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		89CD639D19787B7E00896E3A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +106,7 @@
 		89CD6341197712AC00896E3A = {
 			isa = PBXGroup;
 			children = (
+				89CD639D19787B7E00896E3A /* Images.xcassets */,
 				89CD6353197712AC00896E3A /* CSMobile */,
 				89CD6375197712AC00896E3A /* CSMobileTests */,
 				89CD634C197712AC00896E3A /* Frameworks */,
@@ -121,13 +140,24 @@
 				89CD635C197712AC00896E3A /* CSMobileAppDelegate.h */,
 				89CD635D197712AC00896E3A /* CSMobileAppDelegate.m */,
 				89CD635F197712AC00896E3A /* Main.storyboard */,
+				89CD639719785B2900896E3A /* SignUpViewController.h */,
+				89CD639819785B2900896E3A /* SignUpViewController.m */,
+				89CD639419785A9E00896E3A /* TradeViewController.h */,
+				89CD639519785A9E00896E3A /* TradeViewController.m */,
+				89CD639119785A7F00896E3A /* SettingsViewController.h */,
+				89CD639219785A7F00896E3A /* SettingsViewController.m */,
 				89CD6385197716AD00896E3A /* LoginViewController.h */,
 				89CD6386197716AD00896E3A /* LoginViewController.m */,
+				89CD638E1978581E00896E3A /* ForgotPasswordViewController.h */,
+				89CD638F1978581E00896E3A /* ForgotPasswordViewController.m */,
+				89CD638819784FD400896E3A /* LoadViewController.h */,
+				89CD638919784FD400896E3A /* LoadViewController.m */,
+				89CD638B1978534100896E3A /* ProfileViewController.h */,
+				89CD638C1978534100896E3A /* ProfileViewController.m */,
 				89CD6362197712AC00896E3A /* CSMobileMasterViewController.h */,
 				89CD6363197712AC00896E3A /* CSMobileMasterViewController.m */,
 				89CD6365197712AC00896E3A /* CSMobileDetailViewController.h */,
 				89CD6366197712AC00896E3A /* CSMobileDetailViewController.m */,
-				89CD6368197712AC00896E3A /* Images.xcassets */,
 				89CD6354197712AC00896E3A /* Supporting Files */,
 			);
 			path = CSMobile;
@@ -242,7 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89CD6369197712AC00896E3A /* Images.xcassets in Resources */,
+				89CD639E19787B7E00896E3A /* Images.xcassets in Resources */,
 				89CD6358197712AC00896E3A /* InfoPlist.strings in Resources */,
 				89CD6361197712AC00896E3A /* Main.storyboard in Resources */,
 			);
@@ -264,9 +294,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				89CD6364197712AC00896E3A /* CSMobileMasterViewController.m in Sources */,
+				89CD639619785A9E00896E3A /* TradeViewController.m in Sources */,
 				89CD6367197712AC00896E3A /* CSMobileDetailViewController.m in Sources */,
 				89CD635E197712AC00896E3A /* CSMobileAppDelegate.m in Sources */,
+				89CD639319785A7F00896E3A /* SettingsViewController.m in Sources */,
 				89CD635A197712AC00896E3A /* main.m in Sources */,
+				89CD63901978581E00896E3A /* ForgotPasswordViewController.m in Sources */,
+				89CD638D1978534100896E3A /* ProfileViewController.m in Sources */,
+				89CD638A19784FD400896E3A /* LoadViewController.m in Sources */,
+				89CD639919785B2900896E3A /* SignUpViewController.m in Sources */,
 				89CD6387197716AD00896E3A /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

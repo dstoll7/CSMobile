@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9vB-4m-dRQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9vB-4m-dRQ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -535,6 +535,7 @@
                     <navigationItem key="navigationItem" id="CXp-lD-hgP"/>
                     <connections>
                         <outlet property="currentBalance" destination="13W-VC-v9P" id="lVL-jE-u7w"/>
+                        <outlet property="myStocksTableView" destination="T3O-FA-UFJ" id="W2Z-1E-vFa"/>
                         <outlet property="searchButton" destination="yGh-Sb-Do5" id="rNW-oP-0J2"/>
                         <outlet property="settingsButton" destination="JGs-is-TnX" id="dd8-PW-v7T"/>
                         <segue destination="StR-Yb-nLK" kind="push" identifier="toSettingsSegue" id="heL-CK-uV9"/>
@@ -554,6 +555,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Oox-Kw-Vnb"/>
+        <segue reference="1Kz-e0-atQ"/>
     </inferredMetricsTieBreakers>
 </document>

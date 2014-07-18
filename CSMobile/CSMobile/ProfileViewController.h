@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProfileViewController : UIViewController
+@interface ProfileViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *currentBalance;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
 @property (weak, nonatomic) IBOutlet UIToolbar *settingsButton;
+@property (strong, nonatomic) NSMutableArray *myStocksArray;
+
+@property (strong, nonatomic) UILabel *cusipLabel;
+@property (strong, nonatomic) UILabel *nameLabel;
+@property (strong, nonatomic) UILabel *symbolLabel;
+@property (strong, nonatomic) UILabel *dayHighLabel;
+@property (strong, nonatomic) UILabel *dayLowLabel;
+@property (weak, nonatomic) IBOutlet UITableView *myStocksTableView;
 
 @end

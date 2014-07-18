@@ -30,6 +30,7 @@
 		89CD639919785B2900896E3A /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD639819785B2900896E3A /* SignUpViewController.m */; };
 		89CD639E19787B7E00896E3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CD639D19787B7E00896E3A /* Images.xcassets */; };
 		89CD63A119797E7C00896E3A /* StocksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD63A019797E7C00896E3A /* StocksViewController.m */; };
+		B99A92761979991400B992AD /* Stock.m in Sources */ = {isa = PBXBuildFile; fileRef = B99A92751979991400B992AD /* Stock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		89CD639D19787B7E00896E3A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		89CD639F19797E7C00896E3A /* StocksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StocksViewController.h; sourceTree = "<group>"; };
 		89CD63A019797E7C00896E3A /* StocksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StocksViewController.m; sourceTree = "<group>"; };
+		B99A92741979991400B992AD /* Stock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stock.h; sourceTree = "<group>"; };
+		B99A92751979991400B992AD /* Stock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,8 @@
 				89CD635C197712AC00896E3A /* CSMobileAppDelegate.h */,
 				89CD635D197712AC00896E3A /* CSMobileAppDelegate.m */,
 				89CD635F197712AC00896E3A /* Main.storyboard */,
+				B99A92741979991400B992AD /* Stock.h */,
+				B99A92751979991400B992AD /* Stock.m */,
 				89CD639719785B2900896E3A /* SignUpViewController.h */,
 				89CD639819785B2900896E3A /* SignUpViewController.m */,
 				89CD639419785A9E00896E3A /* TradeViewController.h */,
@@ -309,6 +314,7 @@
 				89CD638D1978534100896E3A /* ProfileViewController.m in Sources */,
 				89CD638A19784FD400896E3A /* LoadViewController.m in Sources */,
 				89CD639919785B2900896E3A /* SignUpViewController.m in Sources */,
+				B99A92761979991400B992AD /* Stock.m in Sources */,
 				89CD6387197716AD00896E3A /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +526,7 @@
 				89CD6381197712AC00896E3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89CD6382197712AC00896E3A /* Build configuration list for PBXNativeTarget "CSMobileTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +535,7 @@
 				89CD6384197712AC00896E3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

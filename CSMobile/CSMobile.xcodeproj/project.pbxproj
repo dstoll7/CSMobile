@@ -29,6 +29,7 @@
 		89CD639619785A9E00896E3A /* TradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD639519785A9E00896E3A /* TradeViewController.m */; };
 		89CD639919785B2900896E3A /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD639819785B2900896E3A /* SignUpViewController.m */; };
 		89CD639E19787B7E00896E3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CD639D19787B7E00896E3A /* Images.xcassets */; };
+		89CD63A119797E7C00896E3A /* StocksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD63A019797E7C00896E3A /* StocksViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		89CD639719785B2900896E3A /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		89CD639819785B2900896E3A /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		89CD639D19787B7E00896E3A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		89CD639F19797E7C00896E3A /* StocksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StocksViewController.h; sourceTree = "<group>"; };
+		89CD63A019797E7C00896E3A /* StocksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StocksViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 				89CD638C1978534100896E3A /* ProfileViewController.m */,
 				89CD6362197712AC00896E3A /* CSMobileMasterViewController.h */,
 				89CD6363197712AC00896E3A /* CSMobileMasterViewController.m */,
+				89CD639F19797E7C00896E3A /* StocksViewController.h */,
+				89CD63A019797E7C00896E3A /* StocksViewController.m */,
 				89CD6365197712AC00896E3A /* CSMobileDetailViewController.h */,
 				89CD6366197712AC00896E3A /* CSMobileDetailViewController.m */,
 				89CD6354197712AC00896E3A /* Supporting Files */,
@@ -300,6 +305,7 @@
 				89CD639319785A7F00896E3A /* SettingsViewController.m in Sources */,
 				89CD635A197712AC00896E3A /* main.m in Sources */,
 				89CD63901978581E00896E3A /* ForgotPasswordViewController.m in Sources */,
+				89CD63A119797E7C00896E3A /* StocksViewController.m in Sources */,
 				89CD638D1978534100896E3A /* ProfileViewController.m in Sources */,
 				89CD638A19784FD400896E3A /* LoadViewController.m in Sources */,
 				89CD639919785B2900896E3A /* SignUpViewController.m in Sources */,

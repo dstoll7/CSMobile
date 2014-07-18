@@ -25,6 +25,12 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    //hide the navigation bar
+    [self.navigationController.navigationBar setHidden:YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -70,8 +76,7 @@
 }
 - (IBAction)forgotPasswordAction:(id)sender {
 }
-- (IBAction)viewStocksAction:(id)sender {
-}
+
 
 - (void)didReceiveMemoryWarning
 {

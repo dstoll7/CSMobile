@@ -1,18 +1,18 @@
 //
-//  ProfileViewController.m
+//  StocksViewController.m
 //  CSMobile
 //
-//  Created by Daniel Stoll on 7/17/14.
+//  Created by Daniel Stoll on 7/18/14.
 //  Copyright (c) 2014 Daniel Stoll. All rights reserved.
 //
 
-#import "ProfileViewController.h"
+#import "StocksViewController.h"
 
-@interface ProfileViewController ()
+@interface StocksViewController ()
 
 @end
 
-@implementation ProfileViewController
+@implementation StocksViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,21 +27,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //need to un-hide the navigation bar when coming from login page
+    [self.navigationController.navigationBar setHidden:NO];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-- (IBAction)searchAction:(id)sender {
-    
-    [self performSegueWithIdentifier:@"toStocksSegue" sender:self];
-
-}
-- (IBAction)settingsAction:(id)sender {
-    [self performSegueWithIdentifier:@"toSettingsSegue" sender:self];
-
 }
 
 /*

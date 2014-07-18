@@ -8,6 +8,7 @@
 
 #import "ProfileViewController.h"
 #import "Stock.h"
+#import "QuartzCore/QuartzCore.h"
 
 @interface ProfileViewController ()
 
@@ -24,6 +25,9 @@
     myStocksArray = [[NSMutableArray alloc]init];
     myStocksTableView.delegate = self;
     myStocksTableView.dataSource = self;
+    myStocksTableView.layer.borderWidth = 4.0;
+    myStocksTableView.layer.borderColor = [UIColor redColor].CGColor;
+    
     [self getMyStocks];
     
     
@@ -103,25 +107,28 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier: CellIdentifier];
         
         //cell.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        cell.backgroundColor = [UIColor lightGrayColor];
+        cell.backgroundColor = [UIColor blackColor];
         
     }
     
-    nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 2, 200, 32)];
-    [nameLabel setFont:[UIFont boldSystemFontOfSize:22.0]];
+    nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 35, 200, 32)];
+    [nameLabel setFont:[UIFont boldSystemFontOfSize:11.0]];
     nameLabel.textAlignment = NSTextAlignmentLeft;
+    nameLabel.textColor = [UIColor whiteColor];
     [nameLabel setBackgroundColor:[UIColor clearColor]];
     [nameLabel setText:currentStock.name];
     
-    cusipLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 40, 200, 32)];
-    [cusipLabel setFont:[UIFont boldSystemFontOfSize:13.0]];
-    cusipLabel.textAlignment = NSTextAlignmentLeft;
+    cusipLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 30, 200, 32)];
+    [cusipLabel setFont:[UIFont boldSystemFontOfSize:22.0]];
+    cusipLabel.textAlignment = NSTextAlignmentRight;
+    cusipLabel.textColor = [UIColor whiteColor];
     [cusipLabel setBackgroundColor:[UIColor clearColor]];
     [cusipLabel setText:currentStock.cusip];
-    
-    symbolLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 25, 200, 32)];
-    [symbolLabel setFont:[UIFont boldSystemFontOfSize:11.0]];
+
+    symbolLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 10, 200, 32)];
+    [symbolLabel setFont:[UIFont boldSystemFontOfSize:30.0]];
     symbolLabel.textAlignment = NSTextAlignmentLeft;
+    symbolLabel.textColor = [UIColor whiteColor];
     [symbolLabel setBackgroundColor:[UIColor clearColor]];
     [symbolLabel setText:currentStock.symbol];
     

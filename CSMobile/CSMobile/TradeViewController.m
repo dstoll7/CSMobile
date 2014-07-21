@@ -34,6 +34,29 @@
     [self.navigationController popViewControllerAnimated:NO];
 }
 
+- (IBAction)submitClicked:(id)sender {
+    // open a alert with an OK and cancel button
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @""
+                                          message:@"Are you sure you would like to make this transaction?"
+                                          delegate:self
+                                          cancelButtonTitle: nil
+                                          otherButtonTitles:@"YES", @"NO", nil];
+    [alert show];
+}
+
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger) index
+{
+    if ([[alertView buttonTitleAtIndex:index] isEqualToString:@"YES"])
+    {
+        [self performSegueWithIdentifier:@"toProfileSegue" sender:self];
+        
+    }
+}
+
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     //drops down keyboard when user touches away from keyboard

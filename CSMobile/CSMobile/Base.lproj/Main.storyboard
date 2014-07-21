@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9vB-4m-dRQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9vB-4m-dRQ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -420,6 +420,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitClicked:" destination="ZAh-eP-QYu" eventType="touchUpInside" id="jyi-xV-dY3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxY-xq-6Za">
                                 <rect key="frame" x="189" y="453" width="57" height="30"/>
@@ -440,6 +443,7 @@
                         <outlet property="limitTextField" destination="OYe-NA-9cA" id="bBy-HH-xTi"/>
                         <outlet property="priceTextField" destination="hV2-M7-Buh" id="Yha-3H-eKO"/>
                         <outlet property="stockNameLabel" destination="PyJ-Tu-tUz" id="Ir2-PZ-FR2"/>
+                        <segue destination="XJr-gi-Drd" kind="push" identifier="toProfileSegue" id="Uhc-N7-UlG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XzB-I6-Xsp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -532,7 +536,6 @@
         <!--Stock Detail View Controller - Detail-->
         <scene sceneID="rab-G0-UcR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j3H-fp-4mv" sceneMemberID="firstResponder"/>
                 <viewController title="Detail" id="rx8-Wn-1l2" customClass="StockDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y8c-et-Zgu"/>
@@ -599,6 +602,7 @@
                         <outlet property="stockSymbolLabel" destination="d8Z-mK-6s2" id="U6a-JR-qhs"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j3H-fp-4mv" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1200" y="116"/>
         </scene>
@@ -612,7 +616,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="j2c-VJ-nsN"/>
+        <segue reference="Uhc-N7-UlG"/>
         <segue reference="N7S-VC-z0d"/>
+        <segue reference="j2c-VJ-nsN"/>
     </inferredMetricsTieBreakers>
 </document>

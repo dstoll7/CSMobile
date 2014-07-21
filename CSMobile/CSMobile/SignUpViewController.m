@@ -35,6 +35,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController.navigationBar setHidden:NO];
+}
+
 /*
 #pragma mark - Navigation
 

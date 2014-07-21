@@ -335,8 +335,8 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rmm-kB-sbT">
-                                <rect key="frame" x="0.0" y="64" width="320" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rmm-kB-sbT">
+                                <rect key="frame" x="-11" y="64" width="338" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Stocks"/>
@@ -353,10 +353,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="Vbi-vs-Ctb"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="searchBar" destination="0KC-Af-UoZ" id="O0k-Ru-IGd"/>
+                        <outlet property="stocksFXControl" destination="rmm-kB-sbT" id="Pyt-i7-GJ9"/>
+                        <outlet property="stocksTableView" destination="1xb-vy-u8l" id="Q9E-yz-tFp"/>
+                        <segue destination="rx8-Wn-1l2" kind="push" identifier="toStockDetail" id="N7S-VC-z0d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Em5-AE-QgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="747" y="116"/>
+            <point key="canvasLocation" x="757" y="46"/>
         </scene>
         <!--Trade View Controller-->
         <scene sceneID="9oF-PG-4xw">
@@ -607,5 +613,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="j2c-VJ-nsN"/>
+        <segue reference="N7S-VC-z0d"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -151,8 +151,12 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    //send the stock from the selected cell to the next page
     stockToPass = [myStocksArray objectAtIndex:indexPath.row];
+    //go to stock detail
     [self performSegueWithIdentifier:@"toStockDetail" sender:self];
+    [self.myStocksTableView deselectRowAtIndexPath:indexPath animated:YES]; //unhighlight cell after selection
+
     
     
 }

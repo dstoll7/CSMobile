@@ -17,7 +17,10 @@
 
 @implementation ProfileViewController{
     Stock *stockToPass;
+    UIActivityIndicatorView *spinner;
 
+
+    
 }
 
 @synthesize myStocksArray, dayHighLabel, dayLowLabel, nameLabel, symbolLabel, cusipLabel, myStocksTableView;
@@ -32,7 +35,31 @@
     myStocksTableView.layer.borderWidth = 4.0;
     myStocksTableView.layer.borderColor = [UIColor redColor].CGColor;
     
-    [self getMyStocks];
+    //create spinner view
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    spinner.frame = CGRectMake(0, 0, 320, 350);
+    [spinner setColor:[UIColor redColor]];
+    
+    //do fetches in background
+    dispatch_queue_t queue = dispatch_queue_create("credit.suisse.GetStocks", NULL);
+    dispatch_async(queue, ^{
+        
+        
+        [self.myStocksTableView addSubview:spinner];
+        [spinner startAnimating];
+        [self getMyStocks];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            
+            [self.myStocksTableView reloadData];
+            
+            [spinner stopAnimating];
+            [spinner removeFromSuperview];
+        });
+    });
+
+    
     
     
 }

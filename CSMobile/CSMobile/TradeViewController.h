@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Stock.h"
 
-@interface TradeViewController : UIViewController
+@interface TradeViewController : UIViewController<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *priceTextField;
+@property (weak, nonatomic) IBOutlet UITextField *limitTextField;
+@property (weak, nonatomic) IBOutlet UILabel *stockNameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+
+@property (nonatomic) Stock *stock;
 
 @end

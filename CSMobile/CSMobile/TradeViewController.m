@@ -13,21 +13,45 @@
 @end
 
 @implementation TradeViewController
+@synthesize limitTextField, priceTextField, stockNameLabel, stock, cancelButton;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    limitTextField.delegate = self;
+    limitTextField.keyboardType = UIKeyboardTypeDecimalPad;
+    priceTextField.delegate = self;
+    priceTextField.keyboardType = UIKeyboardTypeDecimalPad;
+    
+    [stockNameLabel setText:stock.name];
+
 }
+
+- (IBAction)cancelClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:NO];
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    //drops down keyboard when user touches away from keyboard
+    UITouch *touch = [touches anyObject];
+    if(touch.phase == UITouchPhaseBegan)
+    {
+        [limitTextField resignFirstResponder];
+        [priceTextField resignFirstResponder];
+    }
+}
+
+//drops down keyboard when user hits return button
+-(BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 
 - (void)didReceiveMemoryWarning
 {

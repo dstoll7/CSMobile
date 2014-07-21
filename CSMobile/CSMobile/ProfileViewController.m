@@ -9,12 +9,16 @@
 #import "ProfileViewController.h"
 #import "Stock.h"
 #import "QuartzCore/QuartzCore.h"
+#import "StockDetailViewController.h"
 
 @interface ProfileViewController ()
 
 @end
 
-@implementation ProfileViewController
+@implementation ProfileViewController{
+    Stock *stockToPass;
+
+}
 
 @synthesize myStocksArray, dayHighLabel, dayLowLabel, nameLabel, symbolLabel, cusipLabel, myStocksTableView;
 
@@ -145,29 +149,41 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    stockToPass = [myStocksArray objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"toStockDetail" sender:self];
+    
+    
+}
+/*
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
-}
+}*/
 
-- (IBAction)searchAction:(id)sender {
-}
+
+
+
 - (IBAction)settingsAction:(id)sender {
     [self performSegueWithIdentifier:@"toSettingsSegue" sender:self];
     
 }
 
 
-/*
+
  #pragma mark - Navigation
- 
+
+
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
  {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
+     if([segue.identifier isEqualToString: @"toStockDetail"]){
+         StockDetailViewController *destinationViewController = segue.destinationViewController;
+         destinationViewController.stock = stockToPass;
+     }
  }
- */
+
 
 @end

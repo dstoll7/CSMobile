@@ -14,8 +14,6 @@
 		89CD635A197712AC00896E3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD6359197712AC00896E3A /* main.m */; };
 		89CD635E197712AC00896E3A /* CSMobileAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD635D197712AC00896E3A /* CSMobileAppDelegate.m */; };
 		89CD6361197712AC00896E3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CD635F197712AC00896E3A /* Main.storyboard */; };
-		89CD6364197712AC00896E3A /* CSMobileMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD6363197712AC00896E3A /* CSMobileMasterViewController.m */; };
-		89CD6367197712AC00896E3A /* CSMobileDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD6366197712AC00896E3A /* CSMobileDetailViewController.m */; };
 		89CD6370197712AC00896E3A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CD636F197712AC00896E3A /* XCTest.framework */; };
 		89CD6371197712AC00896E3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CD634D197712AC00896E3A /* Foundation.framework */; };
 		89CD6372197712AC00896E3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CD6351197712AC00896E3A /* UIKit.framework */; };
@@ -30,6 +28,7 @@
 		89CD639919785B2900896E3A /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD639819785B2900896E3A /* SignUpViewController.m */; };
 		89CD639E19787B7E00896E3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CD639D19787B7E00896E3A /* Images.xcassets */; };
 		89CD63A119797E7C00896E3A /* StocksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD63A019797E7C00896E3A /* StocksViewController.m */; };
+		B91FF749197CC0C600AE6F84 /* StockDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B91FF748197CC0C600AE6F84 /* StockDetailViewController.m */; };
 		B99A92761979991400B992AD /* Stock.m in Sources */ = {isa = PBXBuildFile; fileRef = B99A92751979991400B992AD /* Stock.m */; };
 /* End PBXBuildFile section */
 
@@ -55,10 +54,6 @@
 		89CD635C197712AC00896E3A /* CSMobileAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMobileAppDelegate.h; sourceTree = "<group>"; };
 		89CD635D197712AC00896E3A /* CSMobileAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMobileAppDelegate.m; sourceTree = "<group>"; };
 		89CD6360197712AC00896E3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		89CD6362197712AC00896E3A /* CSMobileMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMobileMasterViewController.h; sourceTree = "<group>"; };
-		89CD6363197712AC00896E3A /* CSMobileMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMobileMasterViewController.m; sourceTree = "<group>"; };
-		89CD6365197712AC00896E3A /* CSMobileDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMobileDetailViewController.h; sourceTree = "<group>"; };
-		89CD6366197712AC00896E3A /* CSMobileDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMobileDetailViewController.m; sourceTree = "<group>"; };
 		89CD636E197712AC00896E3A /* CSMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CD636F197712AC00896E3A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		89CD6377197712AC00896E3A /* CSMobileTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CSMobileTests-Info.plist"; sourceTree = "<group>"; };
@@ -81,6 +76,8 @@
 		89CD639D19787B7E00896E3A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		89CD639F19797E7C00896E3A /* StocksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StocksViewController.h; sourceTree = "<group>"; };
 		89CD63A019797E7C00896E3A /* StocksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StocksViewController.m; sourceTree = "<group>"; };
+		B91FF747197CC0C600AE6F84 /* StockDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockDetailViewController.h; sourceTree = "<group>"; };
+		B91FF748197CC0C600AE6F84 /* StockDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockDetailViewController.m; sourceTree = "<group>"; };
 		B99A92741979991400B992AD /* Stock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stock.h; sourceTree = "<group>"; };
 		B99A92751979991400B992AD /* Stock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,12 +159,10 @@
 				89CD638919784FD400896E3A /* LoadViewController.m */,
 				89CD638B1978534100896E3A /* ProfileViewController.h */,
 				89CD638C1978534100896E3A /* ProfileViewController.m */,
-				89CD6362197712AC00896E3A /* CSMobileMasterViewController.h */,
-				89CD6363197712AC00896E3A /* CSMobileMasterViewController.m */,
 				89CD639F19797E7C00896E3A /* StocksViewController.h */,
 				89CD63A019797E7C00896E3A /* StocksViewController.m */,
-				89CD6365197712AC00896E3A /* CSMobileDetailViewController.h */,
-				89CD6366197712AC00896E3A /* CSMobileDetailViewController.m */,
+				B91FF747197CC0C600AE6F84 /* StockDetailViewController.h */,
+				B91FF748197CC0C600AE6F84 /* StockDetailViewController.m */,
 				89CD6354197712AC00896E3A /* Supporting Files */,
 			);
 			path = CSMobile;
@@ -303,12 +298,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89CD6364197712AC00896E3A /* CSMobileMasterViewController.m in Sources */,
 				89CD639619785A9E00896E3A /* TradeViewController.m in Sources */,
-				89CD6367197712AC00896E3A /* CSMobileDetailViewController.m in Sources */,
 				89CD635E197712AC00896E3A /* CSMobileAppDelegate.m in Sources */,
 				89CD639319785A7F00896E3A /* SettingsViewController.m in Sources */,
 				89CD635A197712AC00896E3A /* main.m in Sources */,
+				B91FF749197CC0C600AE6F84 /* StockDetailViewController.m in Sources */,
 				89CD63901978581E00896E3A /* ForgotPasswordViewController.m in Sources */,
 				89CD63A119797E7C00896E3A /* StocksViewController.m in Sources */,
 				89CD638D1978534100896E3A /* ProfileViewController.m in Sources */,

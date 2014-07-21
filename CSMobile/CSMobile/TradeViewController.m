@@ -40,8 +40,8 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @""
                                           message:@"Are you sure you would like to make this transaction?"
                                           delegate:self
-                                          cancelButtonTitle: nil
-                                          otherButtonTitles:@"YES", @"NO", nil];
+                                          cancelButtonTitle: @"NO"
+                                          otherButtonTitles:@"YES", nil];
     [alert show];
 }
 

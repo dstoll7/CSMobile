@@ -12,12 +12,13 @@
 
 @interface StocksViewController : UIViewController<UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UISegmentedControl *stocksFXControl;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic)  UISegmentedControl *stocksFXControl;
+@property (strong, nonatomic)  UISearchBar *searchBar;
 
 @property (strong, nonatomic) NSMutableArray *stocksArray;
 
-@property (weak, nonatomic) IBOutlet UITableView *stocksTableView;
+@property (strong, nonatomic)  UITableView *currentTable;
+@property (strong, nonatomic)  UITableView *stocksTableView;
 
 @property (strong, nonatomic) UILabel *cusipLabel;
 @property (strong, nonatomic) UILabel *nameLabel;

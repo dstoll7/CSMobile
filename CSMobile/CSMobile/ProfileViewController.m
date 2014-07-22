@@ -40,6 +40,10 @@
     spinner.frame = CGRectMake(0, 0, 320, 350);
     [spinner setColor:[UIColor redColor]];
     
+    //[self getMyStocks];
+
+    
+    
     //do fetches in background
     dispatch_queue_t queue = dispatch_queue_create("credit.suisse.GetStocks", NULL);
     dispatch_async(queue, ^{
@@ -53,6 +57,7 @@
             
             
             [self.myStocksTableView reloadData];
+            
             
             [spinner stopAnimating];
             [spinner removeFromSuperview];

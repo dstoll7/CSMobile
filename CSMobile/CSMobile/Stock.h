@@ -12,7 +12,7 @@
 
 @property (nonatomic,strong) NSString *cusip;
 @property (nonatomic,strong) NSString *name;
-@property (nonatomic,strong) NSString *symbol;
+@property (nonatomic,strong) NSNumber *price;
 @property (nonatomic,strong) NSString *dayHigh;
 @property (nonatomic,strong) NSString *dayLow;
 

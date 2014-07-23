@@ -17,6 +17,7 @@
 @property (strong, nonatomic) UILabel *cusipLabel;
 @property (strong, nonatomic) UILabel *nameLabel;
 @property (strong, nonatomic) UILabel *symbolLabel;
+@property (strong, nonatomic) UILabel *priceLabel;
 @property (strong, nonatomic) UILabel *dayHighLabel;
 @property (strong, nonatomic) UILabel *dayLowLabel;
 @property (weak, nonatomic) IBOutlet UITableView *myStocksTableView;

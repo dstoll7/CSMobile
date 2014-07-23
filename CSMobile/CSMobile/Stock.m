@@ -15,7 +15,7 @@
     self = [super init];
     if(self)
     {
-        self.cusip = cusip;
+//        self.cusip = cusip;
     }
     return self;
 }

@@ -23,7 +23,7 @@
     
 }
 
-@synthesize myStocksArray, dayHighLabel, dayLowLabel, nameLabel, symbolLabel, cusipLabel, myStocksTableView;
+@synthesize myStocksArray, dayHighLabel, dayLowLabel, nameLabel, priceLabel, symbolLabel, cusipLabel, myStocksTableView;
 
 - (void)viewDidLoad
 {
@@ -77,7 +77,12 @@
     
     //-- Make URL request with server
     NSHTTPURLResponse *response = nil;
-    NSString *jsonUrlString = [NSString stringWithFormat:@"http://ec2-54-86-66-228.compute-1.amazonaws.com/json_businesses.php"];
+    //project server
+    NSString *jsonUrlString = [NSString stringWithFormat:@"http://192.168.3.147:7001/SuisseTrade/rest/stockTest/GOOG/432.5"];
+    
+    //DeShawn's test server
+    //    NSString *jsonUrlString = [NSString stringWithFormat:@"http://ec2-54-86-66-228.compute-1.amazonaws.com/json_businesses.php"];
+    
     NSURL *url = [NSURL URLWithString:[jsonUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     
     //-- Get request and response though URL
@@ -94,19 +99,28 @@
         
         Stock *newStock = [[Stock alloc]init];
         
-        NSString *cusip = dic[@"bid"];
         NSString *name = dic[@"name"];
+        NSNumber *price = dic[@"price"];
         
-        NSString *symbol = dic[@"state_province"];
-        NSString *dayHigh = dic[@"zip_or_postcode"];
-        NSString *dayLow = dic[@"country"];
-        
-        newStock.cusip= cusip;
         newStock.name = name;
-        newStock.symbol = symbol;
-        newStock.dayHigh = dayHigh;
-        newStock.dayLow = dayLow;
+        newStock.price = price;
         
+        
+        
+        /*
+         NSString *cusip = dic[@"bid"];
+         NSString *name = dic[@"name"];
+         
+         NSString *symbol = dic[@"price"];
+         NSString *dayHigh = dic[@"zip_or_postcode"];
+         NSString *dayLow = dic[@"country"];
+         
+         newStock.cusip= cusip;
+         newStock.name = name;
+         newStock.symbol = symbol;
+         newStock.dayHigh = dayHigh;
+         newStock.dayLow = dayLow;
+         */
         
         [myStocksArray addObject:newStock];
         //NSLog(@"%@ %@", newBusiness.name, newBusiness.address1);
@@ -150,34 +164,51 @@
         
     }
     
+    /*
+     nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 35, 200, 32)];
+     [nameLabel setFont:[UIFont boldSystemFontOfSize:11.0]];
+     nameLabel.textAlignment = NSTextAlignmentLeft;
+     nameLabel.textColor = [UIColor blackColor];
+     [nameLabel setBackgroundColor:[UIColor clearColor]];
+     [nameLabel setText:currentStock.name];
+     
+     cusipLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 30, 200, 32)];
+     [cusipLabel setFont:[UIFont boldSystemFontOfSize:22.0]];
+     cusipLabel.textAlignment = NSTextAlignmentRight;
+     cusipLabel.textColor = [UIColor blackColor];
+     [cusipLabel setBackgroundColor:[UIColor clearColor]];
+     [cusipLabel setText:currentStock.cusip];
+     
+     symbolLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 10, 200, 32)];
+     [symbolLabel setFont:[UIFont boldSystemFontOfSize:30.0]];
+     symbolLabel.textAlignment = NSTextAlignmentLeft;
+     symbolLabel.textColor = [UIColor blackColor];
+     [symbolLabel setBackgroundColor:[UIColor clearColor]];
+     [symbolLabel setText:currentStock.price];
+     */
+    
     nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 35, 200, 32)];
-    [nameLabel setFont:[UIFont boldSystemFontOfSize:11.0]];
+    [nameLabel setFont:[UIFont boldSystemFontOfSize:30.0]];
     nameLabel.textAlignment = NSTextAlignmentLeft;
     nameLabel.textColor = [UIColor blackColor];
     [nameLabel setBackgroundColor:[UIColor clearColor]];
     [nameLabel setText:currentStock.name];
     
-    cusipLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 30, 200, 32)];
-    [cusipLabel setFont:[UIFont boldSystemFontOfSize:22.0]];
-    cusipLabel.textAlignment = NSTextAlignmentRight;
-    cusipLabel.textColor = [UIColor blackColor];
-    [cusipLabel setBackgroundColor:[UIColor clearColor]];
-    [cusipLabel setText:currentStock.cusip];
-
-    symbolLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 10, 200, 32)];
-    [symbolLabel setFont:[UIFont boldSystemFontOfSize:30.0]];
-    symbolLabel.textAlignment = NSTextAlignmentLeft;
-    symbolLabel.textColor = [UIColor blackColor];
-    [symbolLabel setBackgroundColor:[UIColor clearColor]];
-    [symbolLabel setText:currentStock.symbol];
+    priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 30, 200, 32)];
+    [priceLabel setFont:[UIFont boldSystemFontOfSize:22.0]];
+    priceLabel.textAlignment = NSTextAlignmentRight;
+    priceLabel.textColor = [UIColor blackColor];
+    [priceLabel setBackgroundColor:[UIColor clearColor]];
+    float price = [currentStock.price floatValue];
+    [priceLabel setText:[NSString stringWithFormat:@"%.2f", price]];
     
     
     // dayLowLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 25, 200, 32)];
     // dayHighLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 25, 200, 32)];
     
     [cell.contentView addSubview:nameLabel];
-    [cell.contentView addSubview:cusipLabel];
-    [cell.contentView addSubview:symbolLabel];
+    [cell.contentView addSubview:priceLabel];
+    //    [cell.contentView addSubview:symbolLabel];
     
     
     

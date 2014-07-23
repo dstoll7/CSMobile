@@ -74,7 +74,7 @@
 
 
 -(void)getMyStocks{
-    
+    /*
     //-- Make URL request with server
     NSHTTPURLResponse *response = nil;
     //project server
@@ -93,17 +93,118 @@
     NSMutableArray *result = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
     
     // NSLog(@"Result = %@",result);
+    */
+    NSArray* names = [NSArray arrayWithObjects:
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"AAPL", @"symbol",
+                       @"Apple Inc.",@"name",
+                       @97.19,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"FB", @"symbol",
+                       @"Facebook, Inc.",@"name",
+                       @71.29,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"MSFT", @"symbol",
+                       @"Microsoft Corporation",@"name",
+                       @44.87,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"EMC", @"symbol",
+                       @"EMC Corporation",@"name",
+                       @28.75,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"BAC", @"symbol",
+                       @"Bank of America Corporation",@"name",
+                       @15.52,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"JNPR", @"symbol",
+                       @"Juniper Networks, Inc.",@"name",
+                       @22.43,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"SIRI", @"symbol",
+                       @"Sirius XM Holdings Inc.",@"name",
+                       @3.46,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"YHOO", @"symbol",
+                       @"Yahoo! Inc.",@"name",
+                       @34.71,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"TLM", @"symbol",
+                       @"Talisman Energy Inc.",@"name",
+                       @11.17,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"PLUG", @"symbol",
+                       @"Plug Power Inc.",@"name",
+                       @5.63,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"XLNX", @"symbol",
+                       @"Xilinx Inc.",@"name",
+                       @41.26,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"GE", @"symbol",
+                       @"General Electric Company",@"name",
+                       @25.91,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"AMD", @"symbol",
+                       @"Advanced Micro Devices, Inc.",@"name",
+                       @3.76,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"F", @"symbol",
+                       @"Ford Motor Co.",@"name",
+                       @17.78,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"QQQ", @"symbol",
+                       @"PowerShares QQQ",@"name",
+                       @97.23,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"CSCO", @"symbol",
+                       @"Cisco Systems, Inc.",@"name",
+                       @25.68,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"RAD", @"symbol",
+                       @"Rite Aid Corporation",@"name",
+                       @7.29,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"PBR", @"symbol",
+                       @"Petr",@"name",
+                       @17.15,@"price",
+                       nil],
+                      [NSDictionary dictionaryWithObjectsAndKeys:
+                       @"INTC", @"symbol",
+                       @"Intel Corporation",@"name",
+                       @34.50,@"price",
+                       nil],
+                        nil];
     
-    for (NSMutableDictionary *dic in result)
+    for (NSMutableDictionary *dic in names)
     {
         
+        NSLog(@"%@", dic);
         Stock *newStock = [[Stock alloc]init];
         
         NSString *name = dic[@"name"];
+        NSString *symbol = dic[@"symbol"];
         NSNumber *price = dic[@"price"];
         
         newStock.name = name;
         newStock.price = price;
+        newStock.symbol = symbol;
         
         
         
@@ -178,17 +279,17 @@
      cusipLabel.textColor = [UIColor blackColor];
      [cusipLabel setBackgroundColor:[UIColor clearColor]];
      [cusipLabel setText:currentStock.cusip];
-     
-     symbolLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 10, 200, 32)];
+     */
+     symbolLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 35, 200, 32)];
      [symbolLabel setFont:[UIFont boldSystemFontOfSize:30.0]];
      symbolLabel.textAlignment = NSTextAlignmentLeft;
      symbolLabel.textColor = [UIColor blackColor];
      [symbolLabel setBackgroundColor:[UIColor clearColor]];
-     [symbolLabel setText:currentStock.price];
-     */
+     [symbolLabel setText:currentStock.symbol];
+     
     
-    nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 35, 200, 32)];
-    [nameLabel setFont:[UIFont boldSystemFontOfSize:30.0]];
+    nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 10, 200, 32)];
+    [nameLabel setFont:[UIFont boldSystemFontOfSize:11.0]];
     nameLabel.textAlignment = NSTextAlignmentLeft;
     nameLabel.textColor = [UIColor blackColor];
     [nameLabel setBackgroundColor:[UIColor clearColor]];
@@ -208,7 +309,7 @@
     
     [cell.contentView addSubview:nameLabel];
     [cell.contentView addSubview:priceLabel];
-    //    [cell.contentView addSubview:symbolLabel];
+    [cell.contentView addSubview:symbolLabel];
     
     
     

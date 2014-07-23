@@ -128,9 +128,11 @@
     [selectFXButton addTarget:self action:@selector(selectFXCLicked:) forControlEvents:UIControlEventTouchUpInside];
     
     [selectFXButton setTitle:@"Choose Base Currency" forState:UIControlStateNormal];
-    [selectFXButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    selectFXButton.layer.borderWidth = 4;
-    selectFXButton.layer.borderColor = [UIColor blackColor].CGColor;
+    [selectFXButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    //selectFXButton.layer.borderWidth = 4;
+    //selectFXButton.layer.borderColor = [UIColor blackColor].CGColor;
+    [selectFXButton setBackgroundColor:[UIColor lightGrayColor]]
+    ;
 
     
     
@@ -173,7 +175,7 @@
     NSHTTPURLResponse *response = nil;
     //project server
     NSString *jsonUrlString = [NSString stringWithFormat:@"http://192.168.3.147:7001/SuisseTrade/rest/stockTest/GOOG/432.5"];
-    
+
     //DeShawn's test server
 //    NSString *jsonUrlString = [NSString stringWithFormat:@"http://ec2-54-86-66-228.compute-1.amazonaws.com/json_businesses.php"];
     NSURL *url = [NSURL URLWithString:[jsonUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -184,6 +186,8 @@
     
     //-- JSON Parsing
     NSMutableArray *result = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
+    
+    //NSMutableDictionary *dic = [NSMutableDictionary alloc]init
     
     @try {
         for (NSMutableDictionary *dic in result)

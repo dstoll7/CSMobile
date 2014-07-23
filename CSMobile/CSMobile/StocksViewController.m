@@ -43,8 +43,9 @@
     
     //self.stocksFXControl.segmentedControlStyle = UISegmentedControlStyleBar;
 
-    stocksFXControl.frame = CGRectMake(0, [UIApplication sharedApplication].statusBarFrame.size.height +self.navigationController.navigationBar.frame.size.height, 322, 30)
-    ;
+    stocksFXControl.frame = CGRectMake(-2, [UIApplication sharedApplication].statusBarFrame.size.height +self.navigationController.navigationBar.frame.size.height, 330, 30);
+    
+    [stocksFXControl setTintColor: [UIColor colorWithRed:148/255.0 green:191/255.0 blue:228/255.0 alpha:1.0]];
 
     [stocksFXControl setSelectedSegmentIndex:0];
     
@@ -60,8 +61,8 @@
    
     stocksTableView.delegate = self;
     stocksTableView.dataSource = self;
-    stocksTableView.layer.borderWidth = 4.0;
-    stocksTableView.layer.borderColor = [UIColor redColor].CGColor;
+//    stocksTableView.layer.borderWidth = 4.0;
+//    stocksTableView.layer.borderColor = [UIColor redColor].CGColor;
     
     
     
@@ -118,7 +119,7 @@
     //-- Make URL request with server
     NSHTTPURLResponse *response = nil;
     //project server
-    //NSString *jsonUrlString = [NSString stringWithFormat:@"http://192.168.3.147:7001/SuisseTrade/rest/stockTest/GOOG/432.5"];
+//    NSString *jsonUrlString = [NSString stringWithFormat:@"http://192.168.3.147:7001/SuisseTrade/rest/stockTest/GOOG/432.5"];
     
     //DeShawn's test server
     NSString *jsonUrlString = [NSString stringWithFormat:@"http://ec2-54-86-66-228.compute-1.amazonaws.com/json_businesses.php"];
@@ -145,18 +146,26 @@
     }
 */
     
-    
-    // NSLog(@"Result = %@",result);
+    NSLog(@"Response Data = %@", responseData);
+    NSLog(@"Result = %@", result);
     
     for (NSMutableDictionary *dic in result)
     {
         
         Stock *newStock = [[Stock alloc]init];
+        NSLog(@"dic = %@",dic);
+        
+//        NSString *cusip = @"Google"; //dic[@"bid"];
+//        NSString *name = dic[@"name"];
+//        
+//        NSString *symbol = dic[@"price"];
+//        NSString *dayHigh = @"";//dic[@"zip_or_postcode"];
+//        NSString *dayLow = @"";//dic[@"country"];
         
         NSString *cusip = dic[@"bid"];
         NSString *name = dic[@"name"];
         
-        NSString *symbol = dic[@"state_province"];
+        NSString *symbol = dic[@"price"];
         NSString *dayHigh = dic[@"zip_or_postcode"];
         NSString *dayLow = dic[@"country"];
         
@@ -249,7 +258,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier: CellIdentifier];
         
         //cell.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        cell.backgroundColor = [UIColor blackColor];
+        cell.backgroundColor = [UIColor whiteColor];
         
     }
     
@@ -265,21 +274,21 @@
     nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 35, 200, 32)];
     [nameLabel setFont:[UIFont boldSystemFontOfSize:11.0]];
     nameLabel.textAlignment = NSTextAlignmentLeft;
-    nameLabel.textColor = [UIColor whiteColor];
+    nameLabel.textColor = [UIColor blackColor];
     [nameLabel setBackgroundColor:[UIColor clearColor]];
     [nameLabel setText:currentStock.name];
     
     cusipLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 30, 200, 32)];
     [cusipLabel setFont:[UIFont boldSystemFontOfSize:22.0]];
     cusipLabel.textAlignment = NSTextAlignmentRight;
-    cusipLabel.textColor = [UIColor whiteColor];
+    cusipLabel.textColor = [UIColor blackColor];
     [cusipLabel setBackgroundColor:[UIColor clearColor]];
     [cusipLabel setText:currentStock.cusip];
     
     symbolLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 10, 200, 32)];
     [symbolLabel setFont:[UIFont boldSystemFontOfSize:30.0]];
     symbolLabel.textAlignment = NSTextAlignmentLeft;
-    symbolLabel.textColor = [UIColor whiteColor];
+    symbolLabel.textColor = [UIColor blackColor];
     [symbolLabel setBackgroundColor:[UIColor clearColor]];
     [symbolLabel setText:currentStock.symbol];
     

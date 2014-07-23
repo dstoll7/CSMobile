@@ -19,13 +19,15 @@
 @implementation StocksViewController{
     Stock *stockToPass;
     UIActivityIndicatorView *spinner;
+    UIPickerView *pickerView;
+    UIToolbar *pickerToolbar;
 
 
 }
 
 
 
-@synthesize searchBar, stocksFXControl, stocksArray, cusipLabel, nameLabel, priceLabel, dayHighLabel, dayLowLabel, symbolLabel, stocksTableView, searchDispController, searchStocksResults;
+@synthesize searchBar, stocksFXControl, stocksArray, cusipLabel, nameLabel, priceLabel, dayHighLabel, dayLowLabel, symbolLabel, stocksTableView, searchDispController, searchStocksResults, selectFXButton, fxArray;
 
 - (void)viewDidLoad
 {
@@ -36,7 +38,9 @@
     [self.navigationController.navigationBar setHidden:NO];
     
     stocksArray = [[NSMutableArray alloc]init];
-    
+    stocksArray = [[NSMutableArray alloc]init];
+    fxArray = [[NSMutableArray alloc]initWithObjects:@"USD", @"JPY", nil];
+
    
     
     stocksFXControl = [[UISegmentedControl alloc]initWithItems:@[@"Stocks",@"FX"]];
@@ -110,7 +114,46 @@
             [spinner removeFromSuperview];
         });
     });
-    //[self getStocks];
+    
+    
+    selectFXButton = [[UIButton alloc]initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height+[UIApplication sharedApplication].statusBarFrame.size.height + 100, self.view.frame.size.width, 50)];
+    
+    [selectFXButton addTarget:self action:@selector(selectFXCLicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [selectFXButton setTitle:@"Choose Base Currency" forState:UIControlStateNormal];
+    [selectFXButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    
+    
+    pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height+[UIApplication sharedApplication].statusBarFrame.size.height, self.view.frame.size.width, 180)];
+    
+    //pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, selectEventView.frame.size.height)];
+    [pickerView setDataSource: self];
+    [pickerView setDelegate: self];
+    pickerView.showsSelectionIndicator = YES;
+    [pickerView setBackgroundColor:[UIColor whiteColor]];
+    
+    //auto select first row
+    
+    
+    
+    pickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(pickerView.frame.origin.x, pickerView.frame.origin.y,320,44)];
+    //[pickerToolbar setBarStyle:uiba];
+    UIBarButtonItem *barButtonDone = [[UIBarButtonItem alloc] initWithTitle:@"Choose Currency"
+                                                                      style:UIBarButtonItemStyleBordered target:self action:@selector(chooseEvent:)];
+    UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"Cancel"
+                                                               style:UIBarButtonItemStyleBordered target:self action:@selector(cancelEvent:)];
+    
+    
+    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    fixedSpace.width = 100;
+    
+    
+    pickerToolbar.items = [[NSArray alloc] initWithObjects:barButtonDone,fixedSpace, cancel,nil];
+    //barButtonDone.tintColor=[UIColor lightGrayColor];
+    [pickerToolbar setBackgroundColor:[UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1]];
+
+    
+    
 
 }
 
@@ -176,15 +219,33 @@
     //if on stocks
     if(segment.selectedSegmentIndex == 0)
     {
+        [selectFXButton removeFromSuperview];
+        
         [self.searchBar setPlaceholder:@"Search Stocks"];
-
+        [self.view addSubview:stocksTableView];
+        [self.view addSubview:searchBar];
+        
+        
     }
     //else on fx
     else{
         [self.searchBar setPlaceholder:@"Search FX"];
-
+        [stocksTableView removeFromSuperview];
+        [searchBar removeFromSuperview];
+        
+        [self.view addSubview:selectFXButton];
+        
+        
     }
 }
+
+
+-(void)selectFXCLicked:(id)sender {
+    [self.view addSubview:pickerView];
+    [self.view addSubview:pickerToolbar];
+    
+}
+
 
 /*
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -427,23 +488,59 @@
     self.stocksTableView.frame = CGRectMake(0, [UIApplication sharedApplication].statusBarFrame.size.height + self.searchBar.frame.size.height+ stocksFXControl.frame.size.height+self.navigationController.navigationBar.frame.size.height, 320, self.view.frame.size.height - self.navigationController.navigationBar.frame.size.height - self.searchBar.frame.size.height - stocksFXControl.frame.size.height);
 }
 
-/*
--(void)searchDisplayController:(UISearchDisplayController *)controller didShowSearchResultsTableView:(UITableView *)tableView {
-    self.searchBar.frame = CGRectMake(0, 0, 320, 44);
-    self.stocksTableView.frame = CGRectMake(0, [UIApplication sharedApplication].statusBarFrame.size.height + self.searchBar.frame.size.height, 320, self.view.frame.size.height - self.navigationController.navigationBar.frame.size.height - [UIApplication sharedApplication].statusBarFrame.size.height - self.searchBar.frame.size.height);
-   // [toolbar removeFromSuperview];
-    
+
+#pragma mark - Picker View Stuff
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;// or the number of vertical "columns" the picker will show...
+}
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    /*
+     if (myLoadedArray!=nil) {
+     return [myLoadedArray count];//this will tell the picker how many rows it has - in this case, the size of your loaded array...
+     }
+     
+     */
+    return 10;
     
 }
--(void)searchDisplayController:(UISearchDisplayController *)controller didHideSearchResultsTableView:(UITableView *)tableView {
-    self.searchBar.frame = CGRectMake(0, self.stocksFXControl.frame.size.height, 320, 44);
-    self.stocksTableView.frame = CGRectMake(0, [UIApplication sharedApplication].statusBarFrame.size.height + self.searchBar.frame.size.height+ stocksFXControl.frame.size.height, 320, self.view.frame.size.height - self.navigationController.navigationBar.frame.size.height - [UIApplication sharedApplication].statusBarFrame.size.height - self.searchBar.frame.size.height);
-    //[self.view addSubview:toolbar];
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    //you can also write code here to descide what data to return depending on the component ("column")
+    
+    return @"USD";
+}
+
+// Set title to selected row
+-(void)pickerView:(UIPickerView *)mypickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    
+    //[addToEventLabel setText:[[pastEventsArray objectAtIndex:row] objectForKey:@"title"]];
+    
+}
+
+
+//set event for photo and remove picker
+-(void)chooseEvent:(id)sender
+{
+    
+    [pickerView removeFromSuperview];
+    [pickerToolbar removeFromSuperview];
+    
+}
+
+//reset picker and set event to nil
+-(void)cancelEvent:(id)sender
+{
+    
+    [pickerView removeFromSuperview];
+    [pickerToolbar removeFromSuperview];
+    
+    //[addToEventLabel setText:addEventLabelText];
+    [pickerView selectRow:0 inComponent:0 animated:YES];
     
     
 }
 
-*/
 
 #pragma mark - Navigation
 

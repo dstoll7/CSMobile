@@ -10,12 +10,15 @@
 #import "Stock.h"
 
 
-@interface StocksViewController : UIViewController<UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface StocksViewController : UIViewController<UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (strong, nonatomic)  UISegmentedControl *stocksFXControl;
 @property (strong, nonatomic)  UISearchBar *searchBar;
 
+@property (strong, nonatomic) UIButton *selectFXButton;
+
 @property (strong, nonatomic) NSMutableArray *stocksArray;
+@property (strong, nonatomic) NSMutableArray *fxArray;
 
 @property (strong, nonatomic)  UITableView *currentTable;
 @property (strong, nonatomic)  UITableView *stocksTableView;

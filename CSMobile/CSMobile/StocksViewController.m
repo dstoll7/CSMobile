@@ -21,13 +21,14 @@
     UIActivityIndicatorView *spinner;
     UIPickerView *pickerView;
     UIToolbar *pickerToolbar;
+    NSString *currentFX;
 
 
 }
 
 
 
-@synthesize searchBar, stocksFXControl, stocksArray, cusipLabel, nameLabel, priceLabel, dayHighLabel, dayLowLabel, symbolLabel, stocksTableView, searchDispController, searchStocksResults, selectFXButton, fxArray;
+@synthesize searchBar, stocksFXControl, stocksArray, cusipLabel, nameLabel, priceLabel, dayHighLabel, dayLowLabel, symbolLabel, stocksTableView, searchDispController, searchStocksResults, selectFXButton, fxArray, fxTableView;
 
 - (void)viewDidLoad
 {
@@ -39,7 +40,7 @@
     
     stocksArray = [[NSMutableArray alloc]init];
     stocksArray = [[NSMutableArray alloc]init];
-    fxArray = [[NSMutableArray alloc]initWithObjects:@"USD", @"JPY", nil];
+    fxArray = [[NSMutableArray alloc]initWithObjects:@"USD", @"JPY", @"EUR", @"GBP", @"AUD", @"CAD", @"CHF", @"HKD", nil];
 
    
     
@@ -74,6 +75,12 @@
     self.searchDispController.searchResultsDelegate = self;
     self.searchDispController.searchResultsDataSource = self;
     [self.searchDispController.searchResultsTableView setRowHeight:90];
+    
+    
+    self.fxTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, [UIApplication sharedApplication].statusBarFrame.size.height + self.searchBar.frame.size.height+ stocksFXControl.frame.size.height+self.navigationController.navigationBar.frame.size.height, 320, self.view.frame.size.height - self.navigationController.navigationBar.frame.size.height - self.searchBar.frame.size.height - stocksFXControl.frame.size.height) style:UITableViewStylePlain];//did some math here to make table sit under the nav bar and span to bottom of phone
+
+    fxTableView.delegate = self;
+    fxTableView.dataSource = self;
 
     
     //add contacts table and search bar to initial view
@@ -116,12 +123,15 @@
     });
     
     
-    selectFXButton = [[UIButton alloc]initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height+[UIApplication sharedApplication].statusBarFrame.size.height + 100, self.view.frame.size.width, 50)];
+    selectFXButton = [[UIButton alloc]initWithFrame:CGRectMake(0, stocksFXControl.frame.size.height+stocksFXControl.frame.origin.y, 320, 44)];
     
     [selectFXButton addTarget:self action:@selector(selectFXCLicked:) forControlEvents:UIControlEventTouchUpInside];
     
     [selectFXButton setTitle:@"Choose Base Currency" forState:UIControlStateNormal];
     [selectFXButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    selectFXButton.layer.borderWidth = 4;
+    selectFXButton.layer.borderColor = [UIColor blackColor].CGColor;
+
     
     
     pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height+[UIApplication sharedApplication].statusBarFrame.size.height, self.view.frame.size.width, 180)];
@@ -139,9 +149,9 @@
     pickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(pickerView.frame.origin.x, pickerView.frame.origin.y,320,44)];
     //[pickerToolbar setBarStyle:uiba];
     UIBarButtonItem *barButtonDone = [[UIBarButtonItem alloc] initWithTitle:@"Choose Currency"
-                                                                      style:UIBarButtonItemStyleBordered target:self action:@selector(chooseEvent:)];
+                                                                      style:UIBarButtonItemStyleBordered target:self action:@selector(chooseFX:)];
     UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"Cancel"
-                                                               style:UIBarButtonItemStyleBordered target:self action:@selector(cancelEvent:)];
+                                                               style:UIBarButtonItemStyleBordered target:self action:@selector(cancelFX:)];
     
     
     UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
@@ -175,43 +185,48 @@
     //-- JSON Parsing
     NSMutableArray *result = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
     
-    
-    for (NSMutableDictionary *dic in result)
-    {
-        
-        Stock *newStock = [[Stock alloc]init];
-//        NSLog(@"dic = %@",dic);
-        
-        NSString *name = dic[@"name"];
-        NSNumber *price = dic[@"price"];
-        
-        newStock.name = name;
-        newStock.price = price;
-        
-        
-        
-        /*
-        NSString *cusip = dic[@"bid"];
-        NSString *name = dic[@"name"];
-        
-        NSString *symbol = dic[@"price"];
-        NSString *dayHigh = dic[@"zip_or_postcode"];
-        NSString *dayLow = dic[@"country"];
-        
-        newStock.cusip= cusip;
-        newStock.name = name;
-        newStock.symbol = symbol;
-        newStock.dayHigh = dayHigh;
-        newStock.dayLow = dayLow;
-        */
-        
-        [stocksArray addObject:newStock];
-        //NSLog(@"%@ %@", newBusiness.name, newBusiness.address1);
-        
+    @try {
+        for (NSMutableDictionary *dic in result)
+        {
+            
+            Stock *newStock = [[Stock alloc]init];
+            
+            NSString *name = dic[@"name"];
+            NSNumber *price = dic[@"price"];
+            
+            newStock.name = name;
+            newStock.price = price;
+            
+            /*
+             NSString *cusip = dic[@"bid"];
+             NSString *name = dic[@"name"];
+             
+             NSString *symbol = dic[@"price"];
+             NSString *dayHigh = dic[@"zip_or_postcode"];
+             NSString *dayLow = dic[@"country"];
+             
+             newStock.cusip= cusip;
+             newStock.name = name;
+             newStock.symbol = symbol;
+             newStock.dayHigh = dayHigh;
+             newStock.dayLow = dayLow;
+             */
+            
+            [stocksArray addObject:newStock];
+            //NSLog(@"%@ %@", newBusiness.name, newBusiness.address1);
+            
+        }
+
+    }
+    @catch (NSException *exception) {
+        return;
+    }
+    @finally {
+        return;
     }
     
+    
 }
-
 
 
 - (void)switchViews:(UISegmentedControl *)segment
@@ -278,7 +293,12 @@
        
         return [searchStocksResults count];
         
-    } else {
+    }
+    else if (tableView == fxTableView){
+        return fxArray.count;
+    }
+    
+    else {
         
         return stocksArray.count;
     }
@@ -309,62 +329,78 @@
         
     }
     
-    
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        currentStock = [searchStocksResults objectAtIndex:indexPath.row];
-    } else {
-        currentStock = [stocksArray objectAtIndex:indexPath.row];
+    if([fxTableView isDescendantOfView:self.view]){
+        
+        nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 35, 200, 32)];
+        [nameLabel setFont:[UIFont boldSystemFontOfSize:30.0]];
+        nameLabel.textAlignment = NSTextAlignmentLeft;
+        nameLabel.textColor = [UIColor blackColor];
+        [nameLabel setBackgroundColor:[UIColor clearColor]];
+        [nameLabel setText:[fxArray objectAtIndex:indexPath.row
+                            ]];
+        
+        [cell.contentView addSubview:nameLabel];
+
+
+        
     }
     
-    
-    /*
-     nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 35, 200, 32)];
-     [nameLabel setFont:[UIFont boldSystemFontOfSize:11.0]];
-     nameLabel.textAlignment = NSTextAlignmentLeft;
-     nameLabel.textColor = [UIColor blackColor];
-     [nameLabel setBackgroundColor:[UIColor clearColor]];
-     [nameLabel setText:currentStock.name];
-     
-     cusipLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 30, 200, 32)];
-     [cusipLabel setFont:[UIFont boldSystemFontOfSize:22.0]];
-     cusipLabel.textAlignment = NSTextAlignmentRight;
-     cusipLabel.textColor = [UIColor blackColor];
-     [cusipLabel setBackgroundColor:[UIColor clearColor]];
-     [cusipLabel setText:currentStock.cusip];
-     
-     symbolLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 10, 200, 32)];
-     [symbolLabel setFont:[UIFont boldSystemFontOfSize:30.0]];
-     symbolLabel.textAlignment = NSTextAlignmentLeft;
-     symbolLabel.textColor = [UIColor blackColor];
-     [symbolLabel setBackgroundColor:[UIColor clearColor]];
-     [symbolLabel setText:currentStock.price];
-    */
-    
-    nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 35, 200, 32)];
-    [nameLabel setFont:[UIFont boldSystemFontOfSize:30.0]];
-    nameLabel.textAlignment = NSTextAlignmentLeft;
-    nameLabel.textColor = [UIColor blackColor];
-    [nameLabel setBackgroundColor:[UIColor clearColor]];
-    [nameLabel setText:currentStock.name];
-    
-    priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 30, 200, 32)];
-    [priceLabel setFont:[UIFont boldSystemFontOfSize:22.0]];
-    priceLabel.textAlignment = NSTextAlignmentRight;
-    priceLabel.textColor = [UIColor blackColor];
-    [priceLabel setBackgroundColor:[UIColor clearColor]];
-    float price = [currentStock.price floatValue];
-    [priceLabel setText:[NSString stringWithFormat:@"%.2f", price]];
-    
-    
-    // dayLowLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 25, 200, 32)];
-    // dayHighLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 25, 200, 32)];
-    
-    [cell.contentView addSubview:nameLabel];
-    [cell.contentView addSubview:priceLabel];
-//    [cell.contentView addSubview:symbolLabel];
-    
-    
-    
+    else{
+        
+        
+        if (tableView == self.searchDisplayController.searchResultsTableView) {
+            currentStock = [searchStocksResults objectAtIndex:indexPath.row];
+        } else {
+            currentStock = [stocksArray objectAtIndex:indexPath.row];
+        }
+
+        
+        /*
+         nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 35, 200, 32)];
+         [nameLabel setFont:[UIFont boldSystemFontOfSize:11.0]];
+         nameLabel.textAlignment = NSTextAlignmentLeft;
+         nameLabel.textColor = [UIColor blackColor];
+         [nameLabel setBackgroundColor:[UIColor clearColor]];
+         [nameLabel setText:currentStock.name];
+         
+         cusipLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 30, 200, 32)];
+         [cusipLabel setFont:[UIFont boldSystemFontOfSize:22.0]];
+         cusipLabel.textAlignment = NSTextAlignmentRight;
+         cusipLabel.textColor = [UIColor blackColor];
+         [cusipLabel setBackgroundColor:[UIColor clearColor]];
+         [cusipLabel setText:currentStock.cusip];
+         
+         symbolLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 10, 200, 32)];
+         [symbolLabel setFont:[UIFont boldSystemFontOfSize:30.0]];
+         symbolLabel.textAlignment = NSTextAlignmentLeft;
+         symbolLabel.textColor = [UIColor blackColor];
+         [symbolLabel setBackgroundColor:[UIColor clearColor]];
+         [symbolLabel setText:currentStock.price];
+         */
+        
+        nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 35, 200, 32)];
+        [nameLabel setFont:[UIFont boldSystemFontOfSize:30.0]];
+        nameLabel.textAlignment = NSTextAlignmentLeft;
+        nameLabel.textColor = [UIColor blackColor];
+        [nameLabel setBackgroundColor:[UIColor clearColor]];
+        [nameLabel setText:currentStock.name];
+        
+        priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 30, 200, 32)];
+        [priceLabel setFont:[UIFont boldSystemFontOfSize:22.0]];
+        priceLabel.textAlignment = NSTextAlignmentRight;
+        priceLabel.textColor = [UIColor blackColor];
+        [priceLabel setBackgroundColor:[UIColor clearColor]];
+        float price = [currentStock.price floatValue];
+        [priceLabel setText:[NSString stringWithFormat:@"%.2f", price]];
+        
+        
+        // dayLowLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 25, 200, 32)];
+        // dayHighLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 25, 200, 32)];
+        
+        [cell.contentView addSubview:nameLabel];
+        [cell.contentView addSubview:priceLabel];
+        //[cell.contentView addSubview:symbolLabel];
+    }
     
     return cell;
 }
@@ -501,14 +537,14 @@
      }
      
      */
-    return 10;
+    return [fxArray count];
     
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     //you can also write code here to descide what data to return depending on the component ("column")
-    
-    return @"USD";
+    currentFX = [fxArray objectAtIndex:row];
+    return [fxArray objectAtIndex:row];
 }
 
 // Set title to selected row
@@ -520,22 +556,27 @@
 
 
 //set event for photo and remove picker
--(void)chooseEvent:(id)sender
+-(void)chooseFX:(id)sender
 {
     
     [pickerView removeFromSuperview];
     [pickerToolbar removeFromSuperview];
+    //[selectFXButton removeFromSuperview];
+    
+    [self.view addSubview:fxTableView];
+    [selectFXButton setTitle:currentFX forState:UIControlStateNormal];
+    
+    
     
 }
 
 //reset picker and set event to nil
--(void)cancelEvent:(id)sender
+-(void)cancelFX:(id)sender
 {
     
     [pickerView removeFromSuperview];
     [pickerToolbar removeFromSuperview];
     
-    //[addToEventLabel setText:addEventLabelText];
     [pickerView selectRow:0 inComponent:0 animated:YES];
     
     

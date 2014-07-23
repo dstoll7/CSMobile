@@ -20,7 +20,7 @@
 @property (strong, nonatomic) NSMutableArray *stocksArray;
 @property (strong, nonatomic) NSMutableArray *fxArray;
 
-@property (strong, nonatomic)  UITableView *currentTable;
+@property (strong, nonatomic)  UITableView *fxTableView;
 @property (strong, nonatomic)  UITableView *stocksTableView;
 
 @property (strong, nonatomic) UILabel *cusipLabel;

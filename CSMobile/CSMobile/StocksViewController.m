@@ -554,9 +554,14 @@
     //go to stock detail
     else{
         
-        //send the stock from the selected cell to the next page
-        stockToPass = [stocksArray objectAtIndex:indexPath.row];
-
+        if(tableView == searchDispController.searchResultsTableView){
+            stockToPass = [searchStocksResults objectAtIndex:indexPath.row];
+        }
+        else{
+            //send the stock from the selected cell to the next page
+            stockToPass = [stocksArray objectAtIndex:indexPath.row];
+        }
+        
         [self performSegueWithIdentifier:@"toStockDetail" sender:self];
         [self.stocksTableView deselectRowAtIndexPath:indexPath animated:YES]; //unhighlight cell after selection
 

@@ -8,6 +8,8 @@
 
 #import "StocksViewController.h"
 #import "StockDetailViewController.h"
+#import "FXDetailPage.h"
+
 @interface StocksViewController ()
 
 @property (nonatomic) UISearchDisplayController *searchDispController;
@@ -22,7 +24,13 @@
     UIPickerView *pickerView;
     UIToolbar *pickerToolbar;
     NSString *currentFX;
+    NSMutableArray *fxPriceArray;
+    
+    NSNumber *rateToPass;
+    NSString *quoteToPass;
+    NSString *baseToPass;
 
+    
 
 }
 
@@ -41,6 +49,8 @@
     stocksArray = [[NSMutableArray alloc]init];
     stocksArray = [[NSMutableArray alloc]init];
     fxArray = [[NSMutableArray alloc]initWithObjects:@"USD", @"JPY", @"EUR", @"GBP", @"AUD", @"CAD", @"CHF", @"HKD", nil];
+
+    fxPriceArray = [[NSMutableArray alloc]initWithObjects:@1, @101.5427, @.7428, @.5868, @1.0591, @1.076, @.9024, @7.7504, nil];
 
    
     
@@ -445,6 +455,16 @@
         
         [cell.contentView addSubview:nameLabel];
 
+        priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 30, 200, 32)];
+        [priceLabel setFont:[UIFont boldSystemFontOfSize:22.0]];
+        priceLabel.textAlignment = NSTextAlignmentRight;
+        priceLabel.textColor = [UIColor blackColor];
+        [priceLabel setBackgroundColor:[UIColor clearColor]];
+        float price = [[fxPriceArray objectAtIndex:indexPath.row]floatValue];
+        [priceLabel setText:[NSString stringWithFormat:@"%.2f", price]];
+        
+        [cell.contentView addSubview:priceLabel];
+
 
         
     }
@@ -519,11 +539,28 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    //send the stock from the selected cell to the next page
-    stockToPass = [stocksArray objectAtIndex:indexPath.row];
+    
+    //go to fx detail
+    if([fxTableView isDescendantOfView:self.view]){
+        
+        baseToPass = selectFXButton.titleLabel.text;
+        rateToPass = [fxPriceArray objectAtIndex:indexPath.row];
+        quoteToPass = [fxArray objectAtIndex:indexPath.row];
+        [self performSegueWithIdentifier:@"toFXDetail" sender:self];
+        [self.fxTableView deselectRowAtIndexPath:indexPath animated:YES]; //unhighlight cell after selection
+       
+
+    }
     //go to stock detail
-    [self performSegueWithIdentifier:@"toStockDetail" sender:self];
-    [self.stocksTableView deselectRowAtIndexPath:indexPath animated:YES]; //unhighlight cell after selection
+    else{
+        
+        //send the stock from the selected cell to the next page
+        stockToPass = [stocksArray objectAtIndex:indexPath.row];
+
+        [self performSegueWithIdentifier:@"toStockDetail" sender:self];
+        [self.stocksTableView deselectRowAtIndexPath:indexPath animated:YES]; //unhighlight cell after selection
+
+    }
     
     
     
@@ -704,6 +741,14 @@
     if([segue.identifier isEqualToString: @"toStockDetail"]){
         StockDetailViewController *destinationViewController = segue.destinationViewController;
         destinationViewController.stock = stockToPass;
+    }
+    
+    else if([segue.identifier isEqualToString: @"toFXDetail"]){
+        FXDetailPage  *destinationViewController = segue.destinationViewController;
+        destinationViewController.rate = rateToPass;
+        destinationViewController.base = baseToPass;
+        destinationViewController.quote = quoteToPass;
+        
     }
 }
 

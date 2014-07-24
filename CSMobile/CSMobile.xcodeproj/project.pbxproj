@@ -29,6 +29,7 @@
 		89CD639E19787B7E00896E3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CD639D19787B7E00896E3A /* Images.xcassets */; };
 		89CD63A119797E7C00896E3A /* StocksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CD63A019797E7C00896E3A /* StocksViewController.m */; };
 		B91FF749197CC0C600AE6F84 /* StockDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B91FF748197CC0C600AE6F84 /* StockDetailViewController.m */; };
+		B91FF756198150F700AE6F84 /* FXDetailPage.m in Sources */ = {isa = PBXBuildFile; fileRef = B91FF755198150F700AE6F84 /* FXDetailPage.m */; };
 		B99A92761979991400B992AD /* Stock.m in Sources */ = {isa = PBXBuildFile; fileRef = B99A92751979991400B992AD /* Stock.m */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,8 @@
 		89CD63A019797E7C00896E3A /* StocksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StocksViewController.m; sourceTree = "<group>"; };
 		B91FF747197CC0C600AE6F84 /* StockDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StockDetailViewController.h; sourceTree = "<group>"; };
 		B91FF748197CC0C600AE6F84 /* StockDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StockDetailViewController.m; sourceTree = "<group>"; };
+		B91FF754198150F700AE6F84 /* FXDetailPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXDetailPage.h; sourceTree = "<group>"; };
+		B91FF755198150F700AE6F84 /* FXDetailPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXDetailPage.m; sourceTree = "<group>"; };
 		B99A92741979991400B992AD /* Stock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stock.h; sourceTree = "<group>"; };
 		B99A92751979991400B992AD /* Stock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +146,8 @@
 				89CD635C197712AC00896E3A /* CSMobileAppDelegate.h */,
 				89CD635D197712AC00896E3A /* CSMobileAppDelegate.m */,
 				89CD635F197712AC00896E3A /* Main.storyboard */,
+				B91FF754198150F700AE6F84 /* FXDetailPage.h */,
+				B91FF755198150F700AE6F84 /* FXDetailPage.m */,
 				B99A92741979991400B992AD /* Stock.h */,
 				B99A92751979991400B992AD /* Stock.m */,
 				89CD639719785B2900896E3A /* SignUpViewController.h */,
@@ -299,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89CD639619785A9E00896E3A /* TradeViewController.m in Sources */,
+				B91FF756198150F700AE6F84 /* FXDetailPage.m in Sources */,
 				89CD635E197712AC00896E3A /* CSMobileAppDelegate.m in Sources */,
 				89CD639319785A7F00896E3A /* SettingsViewController.m in Sources */,
 				89CD635A197712AC00896E3A /* main.m in Sources */,

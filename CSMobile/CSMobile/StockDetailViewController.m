@@ -24,7 +24,7 @@
     // Do any additional setup after loading the view.
     
     [stockNameLabel setText:stock.name];
-//    [stockSymbolLabel setText:stock.symbol];
+    [stockSymbolLabel setText:stock.symbol];
     float price = [stock.price floatValue];
     [stockPriceLabel setText:[NSString stringWithFormat:@"%.2f", price]];
 

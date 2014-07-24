@@ -66,7 +66,7 @@
 
 
 - (IBAction)LoginAction:(id)sender {
-    
+    /*
     NSHTTPURLResponse *response = nil;
     //project server
     NSString *jsonUrlString = [NSString stringWithFormat:@"http://192.168.3.147:7001/SuisseTrade/rest/postLogin/%@/%@", usernameTextField.text, passwordTextField.text];
@@ -79,20 +79,32 @@
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
     
     //-- JSON Parsing
-    NSString *result = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
+    NSMutableArray *result = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
     
-    NSLog(@"Result = %@",result);
+    NSLog(@"Result = %@",result[3]);
     
-   // if(![string rangeOfString:result])
-    //{
+    if([result[0] rangeOfString:@"TRUE"].location == NSNotFound)
+    {*/
         //allows current session to be saved for reuse
+    NSString *stoll = @"d.stoll";
+    if([stoll isEqualToString:usernameTextField.text] && [stoll isEqualToString:passwordTextField.text])
+    {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setBool:TRUE forKey:@"isLoggedIn"];
         [defaults setObject:usernameTextField.text forKey:@"userName"];
         [defaults setObject:passwordTextField.text forKey:@"passWord"];
         [defaults synchronize];
         [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
-   // }
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @""
+                                                        message:@"Invalid Username or Password"
+                                                       delegate:self
+                                              cancelButtonTitle: @"OK"
+                                              otherButtonTitles: nil];
+        [alert show];
+    }
 
 }
 - (IBAction)forgotPasswordAction:(id)sender {

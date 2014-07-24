@@ -99,96 +99,13 @@
                        @"AAPL", @"symbol",
                        @"Apple Inc.",@"name",
                        @97.19,@"price",
+                       @5, @"quantity",
                        nil],
                       [NSDictionary dictionaryWithObjectsAndKeys:
                        @"FB", @"symbol",
                        @"Facebook, Inc.",@"name",
                        @71.29,@"price",
-                       nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"MSFT", @"symbol",
-                       @"Microsoft Corporation",@"name",
-                       @44.87,@"price",
-                       nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"EMC", @"symbol",
-                       @"EMC Corporation",@"name",
-                       @28.75,@"price",
-                       nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"BAC", @"symbol",
-                       @"Bank of America Corporation",@"name",
-                       @15.52,@"price",
-                       nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"JNPR", @"symbol",
-                       @"Juniper Networks, Inc.",@"name",
-                       @22.43,@"price",
-                       nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"SIRI", @"symbol",
-                       @"Sirius XM Holdings Inc.",@"name",
-                       @3.46,@"price",
-                       nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"YHOO", @"symbol",
-                       @"Yahoo! Inc.",@"name",
-                       @34.71,@"price",
-                       nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"TLM", @"symbol",
-                       @"Talisman Energy Inc.",@"name",
-                       @11.17,@"price",
-                       nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"PLUG", @"symbol",
-                       @"Plug Power Inc.",@"name",
-                       @5.63,@"price",
-                       nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"XLNX", @"symbol",
-                       @"Xilinx Inc.",@"name",
-                       @41.26,@"price",
-                       nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"GE", @"symbol",
-                       @"General Electric Company",@"name",
-                       @25.91,@"price",
-                       nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"AMD", @"symbol",
-                       @"Advanced Micro Devices, Inc.",@"name",
-                       @3.76,@"price",
-                       nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"F", @"symbol",
-                       @"Ford Motor Co.",@"name",
-                       @17.78,@"price",
-                       nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"QQQ", @"symbol",
-                       @"PowerShares QQQ",@"name",
-                       @97.23,@"price",
-                       nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"CSCO", @"symbol",
-                       @"Cisco Systems, Inc.",@"name",
-                       @25.68,@"price",
-                       nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"RAD", @"symbol",
-                       @"Rite Aid Corporation",@"name",
-                       @7.29,@"price",
-                       nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"PBR", @"symbol",
-                       @"Petr",@"name",
-                       @17.15,@"price",
-                       nil],
-                      [NSDictionary dictionaryWithObjectsAndKeys:
-                       @"INTC", @"symbol",
-                       @"Intel Corporation",@"name",
-                       @34.50,@"price",
+                       @5, @"quantity",
                        nil],
                         nil];
     

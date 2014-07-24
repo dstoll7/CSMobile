@@ -37,6 +37,7 @@
 - (IBAction)logoutAction:(id)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:FALSE forKey:@"isLoggedIn"];
+    [defaults setBool:FALSE forKey:@"hasBoughtStock"];
     [defaults synchronize];
     [self performSegueWithIdentifier:@"logoutSegue" sender:self];
     

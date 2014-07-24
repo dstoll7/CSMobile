@@ -79,6 +79,9 @@
 {
     if ([[alertView buttonTitleAtIndex:index] isEqualToString:@"YES"])
     {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setBool:TRUE forKey:@"hasBoughtFX"];
+        [defaults synchronize];
         [self performSegueWithIdentifier:@"toProfileSegue" sender:self];
         
     }

@@ -12,14 +12,17 @@
 
 @end
 
-@implementation TradeViewController
-@synthesize quantityTextField, totalTextField, priceTextField, total, stockNameLabel, stock, cancelButton;
+@implementation TradeViewController{
+    BOOL isBuying;
+}
+@synthesize quantityTextField, buySellControl, totalTextField, priceTextField, total, stockNameLabel, stock, cancelButton;
 
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    isBuying = TRUE;
     // Do any additional setup after loading the view.
     quantityTextField.delegate = self;
     quantityTextField.keyboardType = UIKeyboardTypeDecimalPad;
@@ -33,8 +36,27 @@
     
     [totalTextField setUserInteractionEnabled:NO];
     
+    [buySellControl addTarget:self action:@selector(switchViews:) forControlEvents: UIControlEventValueChanged];
+    
 
 }
+
+- (void)switchViews:(UISegmentedControl *)segment
+{
+    //if on stocks
+    if(segment.selectedSegmentIndex == 0)
+    {
+        isBuying = TRUE;
+        
+        
+    }
+    //else on fx
+    else
+    {
+        isBuying = FALSE;
+    }
+}
+
 
 - (void) textFieldDidEndEditing:(UITextField *)textField
 {
@@ -67,7 +89,10 @@
     if ([[alertView buttonTitleAtIndex:index] isEqualToString:@"YES"])
     {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setBool:TRUE forKey:@"hasBoughtStock"];
+        if(!isBuying)
+            [defaults setBool:FALSE forKey:@"hasBoughtStock"];
+        else
+            [defaults setBool:TRUE forKey:@"hasBoughtStock"];
         [defaults synchronize];
         [self performSegueWithIdentifier:@"toProfileSegue" sender:self];
         

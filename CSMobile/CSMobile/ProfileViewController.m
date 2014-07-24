@@ -178,6 +178,34 @@
         [myStocksArray addObject:newStock];
     }
     
+    if([defaults boolForKey:@"hasBoughtFX"]==0)
+    {
+        [defaults setBool:FALSE forKey:@"hasBoughtFX"];
+        [defaults synchronize];
+        
+    }
+    
+    if ([defaults boolForKey:@"hasBoughtFX"]==TRUE)
+    {
+        
+        Stock *newStock = [[Stock alloc]init];
+        
+        NSString *name = @"";
+        NSString *symbol = @"EUR";
+        NSNumber *price = @1.35;
+        NSNumber *quantity = @1000;
+        
+        newStock.name = name;
+        newStock.price = price;
+        newStock.symbol = symbol;
+        newStock.quantity = quantity;
+        
+        accountBalance = @([accountBalance floatValue] + [price floatValue] * [quantity floatValue]);
+        
+        
+        [myStocksArray addObject:newStock];
+    }
+    
     float balance = [accountBalance floatValue];
     float cash = 10000 - balance;
     [accountValueLabel setText:[NSString stringWithFormat:@"$%.2f", balance]];
@@ -222,21 +250,7 @@
         
     }
     
-    /*
-     nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 35, 200, 32)];
-     [nameLabel setFont:[UIFont boldSystemFontOfSize:11.0]];
-     nameLabel.textAlignment = NSTextAlignmentLeft;
-     nameLabel.textColor = [UIColor blackColor];
-     [nameLabel setBackgroundColor:[UIColor clearColor]];
-     [nameLabel setText:currentStock.name];
-     
-     cusipLabel = [[UILabel alloc] initWithFrame:CGRectMake(115, 30, 200, 32)];
-     [cusipLabel setFont:[UIFont boldSystemFontOfSize:22.0]];
-     cusipLabel.textAlignment = NSTextAlignmentRight;
-     cusipLabel.textColor = [UIColor blackColor];
-     [cusipLabel setBackgroundColor:[UIColor clearColor]];
-     [cusipLabel setText:currentStock.cusip];
-     */
+
     symbolLabel = [[UILabel alloc] initWithFrame:CGRectMake(7, 35, 200, 32)];
     [symbolLabel setFont:[UIFont boldSystemFontOfSize:30.0]];
     symbolLabel.textAlignment = NSTextAlignmentLeft;

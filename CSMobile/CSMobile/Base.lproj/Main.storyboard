@@ -439,6 +439,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Bjk-lW-BDp"/>
                     <connections>
+                        <outlet property="buySellControl" destination="BLp-jL-2UT" id="fme-qP-Enq"/>
                         <outlet property="cancelButton" destination="jxY-xq-6Za" id="Blk-VE-Edu"/>
                         <outlet property="priceTextField" destination="hV2-M7-Buh" id="Yha-3H-eKO"/>
                         <outlet property="quantityTextField" destination="Ag8-r1-EFD" id="d4s-PH-9e9"/>
@@ -739,8 +740,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="j2c-VJ-nsN"/>
-        <segue reference="PD0-Qh-2SO"/>
         <segue reference="Trv-hH-RQg"/>
+        <segue reference="Uhc-N7-UlG"/>
+        <segue reference="Oox-Kw-Vnb"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *quantityTextField;
 @property (weak, nonatomic) IBOutlet UILabel *stockNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *buySellControl;
 
 @property (nonatomic) Stock *stock;
 @property (atomic) NSNumber *total; 

@@ -38,6 +38,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:FALSE forKey:@"isLoggedIn"];
     [defaults setBool:FALSE forKey:@"hasBoughtStock"];
+    [defaults setBool:FALSE forKey:@"hasBoughtFX"];
     [defaults synchronize];
     [self performSegueWithIdentifier:@"logoutSegue" sender:self];
     

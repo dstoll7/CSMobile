@@ -67,11 +67,32 @@
 
 - (IBAction)LoginAction:(id)sender {
     
-    //allows current session to be saved for reuse
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:TRUE forKey:@"isLoggedIn"];
-    [defaults synchronize];
-    [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+    NSHTTPURLResponse *response = nil;
+    //project server
+    NSString *jsonUrlString = [NSString stringWithFormat:@"http://192.168.3.147:7001/SuisseTrade/rest/postLogin/%@/%@", usernameTextField.text, passwordTextField.text];
+    
+    
+    NSURL *url = [NSURL URLWithString:[jsonUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    
+    //-- Get request and response though URL
+    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url];
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    
+    //-- JSON Parsing
+    NSString *result = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
+    
+    NSLog(@"Result = %@",result);
+    
+   // if(![string rangeOfString:result])
+    //{
+        //allows current session to be saved for reuse
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setBool:TRUE forKey:@"isLoggedIn"];
+        [defaults setObject:usernameTextField.text forKey:@"userName"];
+        [defaults setObject:passwordTextField.text forKey:@"passWord"];
+        [defaults synchronize];
+        [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+   // }
 
 }
 - (IBAction)forgotPasswordAction:(id)sender {

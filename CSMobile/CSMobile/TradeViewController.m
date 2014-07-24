@@ -13,7 +13,7 @@
 @end
 
 @implementation TradeViewController
-@synthesize limitTextField, priceTextField, stockNameLabel, stock, cancelButton;
+@synthesize quantityTextField, totalTextField, priceTextField, total, stockNameLabel, stock, cancelButton;
 
 
 
@@ -21,13 +21,28 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    limitTextField.delegate = self;
-    limitTextField.keyboardType = UIKeyboardTypeDecimalPad;
+    quantityTextField.delegate = self;
+    quantityTextField.keyboardType = UIKeyboardTypeDecimalPad;
     priceTextField.delegate = self;
-    priceTextField.keyboardType = UIKeyboardTypeDecimalPad;
+    totalTextField.delegate = self;
     
     [stockNameLabel setText:stock.name];
+    float price = [stock.price floatValue];
+    [priceTextField setText:[NSString stringWithFormat:@"$" @"%.2f", price]];
+    [priceTextField setUserInteractionEnabled:NO];
+    
+    [totalTextField setUserInteractionEnabled:NO];
+    
 
+}
+
+- (void) textFieldDidEndEditing:(UITextField *)textField
+{
+    quantityTextField.delegate = self;
+    NSNumber *quantity = [NSNumber numberWithInt:[quantityTextField.text intValue]];
+    total = @([stock.price floatValue] * [quantity floatValue]);
+    float totalAmount = [total floatValue];
+    [totalTextField setText:[NSString stringWithFormat:@"$" @"%.2f", totalAmount]];
 }
 
 - (IBAction)cancelClicked:(id)sender {
@@ -59,11 +74,12 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    
     //drops down keyboard when user touches away from keyboard
     UITouch *touch = [touches anyObject];
     if(touch.phase == UITouchPhaseBegan)
     {
-        [limitTextField resignFirstResponder];
+        [quantityTextField resignFirstResponder];
         [priceTextField resignFirstResponder];
     }
 }

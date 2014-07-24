@@ -195,7 +195,7 @@
     for (NSMutableDictionary *dic in names)
     {
         
-        NSLog(@"%@", dic);
+//        NSLog(@"%@", dic);
         Stock *newStock = [[Stock alloc]init];
         
         NSString *name = dic[@"name"];
